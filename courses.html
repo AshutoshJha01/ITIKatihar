@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Trades</title>
+
+	<!-- font Awesome CDN link -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+	<!-- External CSS -->
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="about.css">
+
+	<!-- JQuery CDN link -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<!-- Navigation start -->
+	<nav>
+		<img src="img/logo.jpg" class="logo" alt="">
+
+		<div class="navigation">
+			<ul>
+				<i id="menu-close" class="fas fa-times"></i>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about.html">About Us</a></li>
+				<li><a href="blog.html">Blog</a></li>
+				<li><a href="courses.html" class="active">Trades</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+
+			<img src="img/menu.png" id="menu-btn" alt="">
+		</div>
+	</nav>
+	<!-- Navigation ends -->
+
+
+	<!-- Hero section starts from here -->
+	<section id="about-home">
+		<h2>
+			Trades
+		</h2>
+	</section>
+	<!-- Hero section ends from here -->
+
+		<!-- Courses section starts from here -->
+	<section id="course">
+		<h1>Our Popular Trades</h1>
+		<p></p>
+
+		<div class="course-box">
+			<div onclick="window.location.href='course-inner.html'" class="courses">
+				<img src="img/c1.jpg" alt="">
+				<div class="details">
+					<h6>Electrician</h6>
+					<p><b>Electrician (2 Years) </b>One of the highest-demand engineering trades, focusing on electrical wiring, machinery, and power systems</p>
+				</div>
+				
+			</div>
+
+			<div class="courses">
+				<img src="img/c2.png" alt="">
+				<div class="details">
+					<h6>Fitter</h6>
+					<p><b>Fitter (2 Years) </b>– Core industrial and manufacturing trade with strong career and apprenticeship potential (including Indian Railways).</p>
+				</div>
+				
+			</div>
+
+			<div class="courses">
+				<img src="img/c3.jpeg" alt="">
+				<div class="details">
+					<h6>Electronic Mech.</h6>
+
+				</div>
+				
+			</div>
+
+			<div class="courses">
+				<img src="img/c4.jpeg" alt="">
+				<div class="details">
+					<h6>Information Technology and Electronics System Maintenance</h6>
+					<p><b>Information Technology and Electronics System Maintenance (ICTSM) (2 Years)</b> – Focuses on computer hardware, electronics, and system maintenance.</p>
+				</div>
+				
+			</div>
+
+			<div class="courses">
+				<img src="img/c5.jpg" alt="">
+				<div class="details">
+					<h6>Machinist</h6>
+				</div>
+			</div>
+
+			<div class="courses">
+				<img src="img/c6.jpg" alt="">
+				<div class="details">
+					<h6>Turner</h6>
+					<p><b>Turner (2 Years) </b>– Precision machine-shop trade essential for metal-cutting and component manufacturing.</p>
+				</div>
+			</div>
+
+			<div class="courses">
+				<img src="img/c7.jpeg" alt="">
+				<div class="details">
+					<h6>Wireman</h6>
+					<p><b>Wireman (2 Years)</b> – Covers domestic and commercial electrical installation and wiring work.</p>
+				</div>
+			</div>
+
+			<div class="courses">
+				<img src="img/c8.jpg" alt="">
+				<div class="details">
+					<h6>Mechanic Motor Vehicle </h6>
+					<p><b>Mechanic Motor Vehicle (MMV) (2 Years) </b>– Trains students in automobile repair, servicing, and modern vehicle systems.</p>
+				</div>
+			</div>
+
+			<div class="courses">
+				<img src="img/c9.webp" alt="">
+				<div class="details">
+					<h6>Welder</h6>
+					<p><b>Welder (1 Year)</b> – Short-duration engineering trade with steady demand in fabrication and construction</p>
+				</div>
+			</div>
+
+			<div class="courses">
+				<img src="img/c10.jpeg" alt="">
+				<div class="details">
+					<h6>Mechanic Diesel</h6>
+				</div>
+			</div>
+
+			<div class="courses">
+				<img src="img/c11.jpg" alt="">
+				<div class="details">
+					<h6>FoundryMan</h6>
+				</div>
+			</div>
+
+			<div class="courses">
+				<img src="img/c12.jpeg" alt="">
+				<div class="details">
+					<h6>Plumber</h6>
+					<p><b>Plumber (1 Year)</b> – High self-employment and infrastructure utility scope.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Courses section ends from here -->
+
+	<!-- Footer section starts from here -->
+	<div id="content-footer"></div>
+	<!-- Footer section ends from here -->
+
+	<script>
+		// Show menu links on burger click
+		$('#menu-btn').click(function(){
+			$('nav .navigation ul').addClass('active')
+		});
+
+		// Hide navbar on click function
+		$('#menu-close').click(function(){
+			$('nav .navigation ul').removeClass('active')
+		});
+	</script>
+	<script>
+		 fetch('footer/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('content-footer').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading HTML:', error));
+	</script>
+</body>
+</html>

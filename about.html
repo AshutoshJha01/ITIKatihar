@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>GOVT. ITI KATIHAR</title>
+
+	<!-- font Awesome CDN link -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+	<!-- External CSS -->
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="about.css">
+
+	<!-- JQuery CDN link -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<!-- Navigation start -->
+	<nav>
+		<img src="img/logo.svg" class="logo" alt="">
+
+		<div class="navigation">
+			<ul>
+				<i id="menu-close" class="fas fa-times"></i>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about.html" class="active">About Us</a></li>
+				<li><a href="blog.html">Blog</a></li>
+				<li><a href="courses.html">Courses</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+
+			<img src="img/menu.png" id="menu-btn" alt="">
+		</div>
+	</nav>
+	<!-- Navigation ends -->
+
+
+	<!-- Hero section starts from here -->
+	<section id="about-home">
+		<h2>
+			About ITI Katihar/
+		</h2>
+	</section>
+	<!-- Hero section ends from here -->
+
+
+	<!-- About section starts from here -->
+	<section id="about-container">
+		<div class="about-img">
+			<img src="img/a.png" alt="">
+		</div>
+		<div class="about-text">
+			<h2>
+				Welcome to Govt. ITI Katihar (Government Industrial Training Institute, Katihar, Bihar).
+			</h2>
+			<p>
+				Govt. ITI Katihar is an established government technical training institution under the Ministry of Skill Development and Entrepreneurship, Government of India, offering regular technical and vocational programs (such as Electrician, Fitter, Wireman, Turner, Machinist, etc.) aligned with the NCVT and National Skills Qualifications Framework (NSQF)
+			</p>
+
+			<div class="about-fe">
+				<img src="img/fe1.png" alt="">
+				<div class="fe-text">
+					<h5>12 Trades</h5>
+					<p>
+						Are you looking for admission details or trade courses offered at Govt. ITI Katihar?
+					</p>
+				</div>
+			</div>
+			<div class="about-fe">
+				<img src="img/fe2.png" alt="">
+				<div class="fe-text">
+					<h5>Lifetime Access</h5>
+					<p>
+						Certification: Upon successful completion of the course and clearing the All India Trade Test (AITT) conducted by NCVT, students receive a National Trade Certificate (NTC), which is recognized across India and internationally
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- About section ends from here -->
+
+
+	<!-- Features section starts from here -->
+	<section id="features">
+		<h1>Awesome Features</h1>
+		<p>Government Industrial Training Institute (Govt ITI) in Katihar, Bihar, offers several standout features and technical programs</p>
+
+		<div class="fea-base">
+			<div class="fea-box">
+				<i class="fas fa-graduation-cap"></i>
+				<h3>Diverse Technical Trades</h3>
+				<p>
+					The institute runs a wide range of NCVT-recognized technical and vocational trades, including Electrician (FT/ELEC), Fitter, Wireman (WM), Welder (WDR), Turner (TR), Draughtsman, Plumber (PLB), Motor Mechanic Vehicle (MMV), Information and Communication Technology System Maintenance (ICTSM), and more.
+				</p>
+			</div>
+
+			<div class="fea-box">
+				<i class="fa-solid fa-book-bookmark"></i>
+				<h3>Industry-Ready Training</h3>
+				<p>
+					 Workshops are equipped with practical tools and machinery to give students hands-on experience for immediate entry into the workforce.
+				</p>
+			</div>
+
+			<div class="fea-box">
+				<i class="fas fa-award"></i>
+				<h3>Active Placement Drives</h3>
+				<p>
+					The institute regularly organizes campus placement programs and recruitment drives to connect trained youth with employment and apprenticeship opportunities. 
+				</p>
+			</div>
+		</div>
+	</section>
+	<!-- Features section ends from here -->
+
+
+	<!-- Trust section starts from here -->
+	<section id="trust">
+		<h1>Regulated by Government Authorities</h1>
+		<p>Ministry of Skill Development and Entrepreneurship (MSDE)</p><p> Directorate General of Training (DGT), Government of India.NCVT Affiliation: It is officially recognized and affiliated with the National Council for Vocational Training (NCVT), meaning its certifications are standardized nationwide.   State Recognition: Functioning as a premier state-run institute under the Department of Labour Resources, Government of Bihar (admissions channeled via BCECEB/ITICAT), ensuring complete legal and educational authenticity.</p>
+		<div class="trust-img">
+			<img src="img/trust (1).png" alt="">
+			<img src="img/trust (2).png" alt="">
+			<img src="img/trust (3).png" alt="">
+			<img src="img/trust (4).png" alt="">
+			<img src="img/trust (5).png" alt="">
+			<img src="img/trust (6).png" alt="">
+		</div>
+	</section>
+	<!-- Trust section ends from here -->
+
+
+	<!-- Footer section starts from here -->
+	<div id="content-footer"></div>
+	<!-- Footer section ends from here -->
+
+	<script>
+		// Show menu links on burger click
+		$('#menu-btn').click(function(){
+			$('nav .navigation ul').addClass('active')
+		});
+
+		// Hide navbar on click function
+		$('#menu-close').click(function(){
+			$('nav .navigation ul').removeClass('active')
+		});
+	</script>
+	<script>
+		 fetch('footer/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('content-footer').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading HTML:', error));
+	</script>
+</body>
+</html>
