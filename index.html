@@ -1,267 +1,415 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>GOVT. ITI KATIHAR</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOVT. ITI KATIHAR</title>
 
-	<!-- font Awesome CDN link -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <!-- Bootstrap 5 CDN CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-	<!-- External CSS -->
-	<link rel="stylesheet" href="style.css">
+    <!-- Font Awesome CDN link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 
-	<!-- JQuery CDN link -->
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- External CSS -->
+    
+
+    <!-- JQuery CDN link -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 <body>
-	<!-- Navigation start -->
-	<nav>
-		<img src="img/logo.jpg" class="logo" alt="">
 
-		<div class="navigation">
-			<ul>
-				<i id="menu-close" class="fas fa-times"></i>
-				<li><a href="index.html" class="active">Home</a></li>
-				<li><a href="about.html">About Us</a></li>
-				<li><a href="blog.html">Blog</a></li>
-				<li><a href="courses.html">Trades</a></li>
-				<li><a href="contact.html">Contact</a></li>
-			</ul>
+    <!-- Navigation start -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm px-3">
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html">
+                <img src="img/logo.jpg" class="logo" alt="Logo" height="50">
+            </a>
 
-			<img src="img/menu.png" id="menu-btn" alt="">
-		</div>
-	</nav>
-	<!-- Navigation ends -->
+            <!-- Mobile Menu Toggle Button -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" id="menu-btn"></span>
+            </button>
 
-
-	<!-- Hero section starts from here -->
-	<section id="home">
-		<h2>
-			राजकीय औद्योगिक प्रशिक्षण संस्थान - कटिहार 
-		</h2>
-		<p>
-			राजकीय औद्योगिक प्रशिक्षण संस्थान (Govt. ITI), कटिहार बिहार सरकार के श्रम संसाधन विभाग द्वारा संचालित एक प्रमुख तकनीकी संस्थान है। यह संस्थान स्थानीय युवाओं को विभिन्न तकनीकी और गैर-तकनीकी ट्रेडों में रोजगारपरक कौशल प्रशिक्षण प्रदान कर उन्हें आत्मनिर्भर बनाने का कार्य करता है।
-		</p>
-		<div class="btn">
-			<a href="#" class="blue">Learn More</a>
-			<a href="#" class="yellow">Visit Trades</a>
-		</div>
-	</section>
-	<!-- Hero section ends from here -->
-
-
-	<!-- Features section starts from here -->
-	<section id="features">
-		<h1>Awesome Features</h1>
-		<p>Government Industrial Training Institute (Govt ITI) in Katihar, Bihar, offers several standout features and technical programs</p>
-
-		<div class="fea-base">
-			<div class="fea-box">
-				<i class="fas fa-graduation-cap"></i>
-				<h3>Diverse Technical Trades</h3>
-				<p>
-					The institute runs a wide range of NCVT-recognized technical and vocational trades, including Electrician (FT/ELEC), Fitter, Wireman (WM), Welder (WDR), Turner (TR), Draughtsman, Plumber (PLB), Motor Mechanic Vehicle (MMV), Information and Communication Technology System Maintenance (ICTSM), and more.
-				</p>
-			</div>
-
-			<div class="fea-box">
-				<i class="fa-solid fa-book-bookmark"></i>
-				<h3>Industry-Ready Training</h3>
-				<p>
-					 Workshops are equipped with practical tools and machinery to give students hands-on experience for immediate entry into the workforce.
-				</p>
-			</div>
-
-			<div class="fea-box">
-				<i class="fas fa-award"></i>
-				<h3>Active Placement Drives</h3>
-				<p>
-					The institute regularly organizes campus placement programs and recruitment drives to connect trained youth with employment and apprenticeship opportunities. 
-				</p>
-			</div>
-		</div>
-	</section>
-	<!-- Features section ends from here -->
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse justify-content-end navigation" id="navbarNav">
+                <ul class="navbar-nav align-items-lg-center gap-lg-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="courses.html">Trades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navigation ends -->
 
 
-	<!-- Courses section starts from here -->
-	<section id="course">
-		<h1>Our Popular Trades</h1>
-		<p>The Government Industrial Training Institute Katihar offers several top NCVT- and SCVT-recognized technical and vocational trades</p>
-
-		<div class="course-box">
-			<div onclick="window.location.href='course-inner.html'" class="courses">
-				<img src="img/c1.jpg" alt="">
-				<div class="details">
-					<h6>Electrician</h6>
-					<p><b>Electrician (2 Years) </b>One of the highest-demand engineering trades, focusing on electrical wiring, machinery, and power systems</p>
-				</div>
-				
-			</div>
-
-			<div class="courses">
-				<img src="img/c2.png" alt="">
-				<div class="details">
-					<h6>Fitter</h6>
-					<p><b>Fitter (2 Years) </b>– Core industrial and manufacturing trade with strong career and apprenticeship potential (including Indian Railways).</p>
-				</div>
-				
-			</div>
-
-			<div class="courses">
-				<img src="img/c3.jpeg" alt="">
-				<div class="details">
-					<h6>Electronic Mech.</h6>
-
-				</div>
-				
-			</div>
-
-			<div class="courses">
-				<img src="img/c4.jpeg" alt="">
-				<div class="details">
-					<h6>Information Technology and Electronics System Maintenance</h6>
-					<p><b>Information Technology and Electronics System Maintenance (ICTSM) (2 Years)</b> – Focuses on computer hardware, electronics, and system maintenance.</p>
-				</div>
-				
-			</div>
-
-			<div class="courses">
-				<img src="img/c5.jpg" alt="">
-				<div class="details">
-					<h6>Machinist</h6>
-				</div>
-			</div>
-
-			<div class="courses">
-				<img src="img/c6.jpg" alt="">
-				<div class="details">
-					<h6>Turner</h6>
-					<p><b>Turner (2 Years) </b>– Precision machine-shop trade essential for metal-cutting and component manufacturing.</p>
-				</div>
-			</div>
-
-			<div class="courses">
-				<img src="img/c7.jpeg" alt="">
-				<div class="details">
-					<h6>Wireman</h6>
-					<p><b>Wireman (2 Years)</b> – Covers domestic and commercial electrical installation and wiring work.</p>
-				</div>
-			</div>
-
-			<div class="courses">
-				<img src="img/c8.jpg" alt="">
-				<div class="details">
-					<h6>Mechanic Motor Vehicle </h6>
-					<p><b>Mechanic Motor Vehicle (MMV) (2 Years) </b>– Trains students in automobile repair, servicing, and modern vehicle systems.</p>
-				</div>
-			</div>
-
-			<div class="courses">
-				<img src="img/c9.webp" alt="">
-				<div class="details">
-					<h6>Welder</h6>
-					<p><b>Welder (1 Year)</b> – Short-duration engineering trade with steady demand in fabrication and construction</p>
-				</div>
-			</div>
-
-			<div class="courses">
-				<img src="img/c10.jpeg" alt="">
-				<div class="details">
-					<h6>Mechanic Diesel</h6>
-				</div>
-			</div>
-
-			<div class="courses">
-				<img src="img/c11.jpg" alt="">
-				<div class="details">
-					<h6>FoundryMan</h6>
-				</div>
-			</div>
-
-			<div class="courses">
-				<img src="img/c12.jpeg" alt="">
-				<div class="details">
-					<h6>Plumber</h6>
-					<p><b>Plumber (1 Year)</b> – High self-employment and infrastructure utility scope.</p>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Courses section ends from here -->
+    <!-- Hero section starts from here -->
+    <section id="home" class="container-fluid text-white text-center">
+        
+        <!-- <div class="card bg-dark text-white border-0">
+            <!-- The responsive background image -->
+            <img src="img/back.jpg" class="card-img" alt="Background Image">
+            
+            <!-- The overlay element containing your text -->
+            <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center text-center">
+               <div class="col-lg-8">
+                <h2 class="display-5 fw-bold mb-3">
+                    राजकीय औद्योगिक प्रशिक्षण संस्थान - कटिहार 
+                </h2>
+                <p class="lead  mb-4">
+                    राजकीय औद्योगिक प्रशिक्षण संस्थान (Govt. ITI), कटिहार बिहार सरकार के श्रम संसाधन विभाग द्वारा संचालित एक प्रमुख तकनीकी संस्थान है। यह संस्थान स्थानीय युवाओं को विभिन्न तकनीकी और गैर-तकनीकी ट्रेडों में रोजगारपरक कौशल प्रशिक्षण प्रदान कर उन्हें आत्मनिर्भर बनाने का कार्य करता है।
+                </p>
+                <div class="btn d-flex justify-content-center gap-3">
+                    <a href="#" class="btn btn-primary blue px-4 py-2">Learn More</a>
+                    <a href="#" class="btn btn-warning yellow px-4 py-2">Visit Trades</a>
+                </div>
+            </div>
+            </div>
+        </div> -->
+     
+    </section>
+    <!-- Hero section ends from here -->
 
 
-	<!-- Registration section starts from here -->
-	<section id="registration">
-		<div class="reminder">
-			<p>Our Trades GOV ITI Katihar</p>
-			<h1>Registration For Query</h1>
+    <!-- Features section starts from here -->
+    <section id="features" class="container py-5">
+        <div class="text-center mb-5">
+            <h1 class="fw-bold">Awesome Features</h1>
+            <p class="text-muted">Government Industrial Training Institute (Govt ITI) in Katihar, Bihar, offers several standout features and technical programs</p>
+        </div>
 
-			<div class="time">
-				<div class="date">18 <br> Days</div>
-				<div class="date">23 <br> Hours</div>
-				<div class="date">06 <br> Minutes</div>
-				<div class="date">58 <br> Seconds</div>
-			</div>
-		</div>
+        <div class="row g-4 fea-base">
+            <div class="col-md-4">
+                <div class="fea-box p-4 border rounded shadow-sm h-100 text-center">
+                    <i class="fas fa-graduation-cap fa-2x mb-3 text-primary"></i>
+                    <h3>Diverse Technical Trades</h3>
+                    <p class="text-muted small">
+                        The institute runs a wide range of NCVT-recognized technical and vocational trades, including Electrician (FT/ELEC), Fitter, Wireman (WM), Welder (WDR), Turner (TR), Draughtsman, Plumber (PLB), Motor Mechanic Vehicle (MMV), Information and Communication Technology System Maintenance (ICTSM), and more.
+                    </p>
+                </div>
+            </div>
 
-		<div class="form">
-			<h3>Send Any  Query!</h3>
+            <div class="col-md-4">
+                <div class="fea-box p-4 border rounded shadow-sm h-100 text-center">
+                    <i class="fa-solid fa-book-bookmark fa-2x mb-3 text-primary"></i>
+                    <h3>Industry-Ready Training</h3>
+                    <p class="text-muted small">
+                         Workshops are equipped with practical tools and machinery to give students hands-on experience for immediate entry into the workforce.
+                    </p>
+                </div>
+            </div>
 
-			<input type="text" placeholder="Name" name="" id="">
-			<input type="email" placeholder="Email ID" name="" id="">
-			<input type="text" placeholder="Contact Number" name="" id="">
+            <div class="col-md-4">
+                <div class="fea-box p-4 border rounded shadow-sm h-100 text-center">
+                    <i class="fas fa-award fa-2x mb-3 text-primary"></i>
+                    <h3>Active Placement Drives</h3>
+                    <p class="text-muted small">
+                        The institute regularly organizes campus placement programs and recruitment drives to connect trained youth with employment and apprenticeship opportunities. 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Features section ends from here -->
 
-			<div class="btn">
-				<a href="#" class="yellow">Contact</a>
-			</div>
-		</div>
-	</section>
-	<!-- Registration section ends from here -->
+
+    <!-- Courses section starts from here -->
+    <section id="course" class="container py-5 bg-light">
+        <div class="text-center mb-5">
+            <h1 class="fw-bold">Our Popular Trades</h1>
+            <p class="text-muted">The Government Industrial Training Institute Katihar offers several top NCVT- and SCVT-recognized technical and vocational trades</p>
+        </div>
+
+        <div class="row g-4 course-box">
+            <div class="col-md-4 col-sm-6">
+                <div onclick="window.location.href='course-inner.html'" class="courses card h-100 shadow-sm border-0 cursor-pointer" style="cursor: pointer;">
+                    <img src="img/c1.jpg" class="card-img-top object-fit-cover" alt="" style="height: 100%;">
+                    <div class="card-body details">
+                        <h6 class="card-title fw-bold">Electrician</h6>
+                        <p class="card-text text-muted small"><b>Electrician (2 Years) </b>One of the highest-demand engineering trades, focusing on electrical wiring, machinery, and power systems</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="courses card h-100 shadow-sm border-0">
+                    <img src="img/c2.jpg" class="card-img-top object-fit-cover" alt="" style="height: 100%;">
+                    <div class="card-body details">
+                        <h6 class="card-title fw-bold">Fitter</h6>
+                        <p class="card-text text-muted small"><b>Fitter (2 Years) </b>– Core industrial and manufacturing trade with strong career and apprenticeship potential (including Indian Railways).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="courses card h-100 shadow-sm border-0">
+                    <img src="img/c3.avif" class="card-img-top object-fit-cover" alt="" style="height: 100%;">
+                    <div class="card-body details">
+                        <h6 class="card-title fw-bold">Electronic Mech.</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="courses card h-100 shadow-sm border-0">
+                    <img src="img/c4.jpeg" class="card-img-top object-fit-cover" alt="" style="height: 100%;">
+                    <div class="card-body details">
+                        <h6 class="card-title fw-bold">Information Technology and Electronics System Maintenance</h6>
+                        <p class="card-text text-muted small"><b>Information Technology and Electronics System Maintenance (ICTSM) (2 Years)</b> – Focuses on computer hardware, electronics, and system maintenance.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="courses card h-100 shadow-sm border-0">
+                    <img src="img/c5.webp" class="card-img-top object-fit-cover" alt="" style="height: 100%;">
+                    <div class="card-body details">
+                        <h6 class="card-title fw-bold">Machinist</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="courses card h-100 shadow-sm border-0">
+                    <img src="img/c6.jpg" class="card-img-top object-fit-cover" alt="" style="height: 100%;">
+                    <div class="card-body details">
+                        <h6 class="card-title fw-bold">Turner</h6>
+                        <p class="card-text text-muted small"><b>Turner (2 Years) </b>– Precision machine-shop trade essential for metal-cutting and component manufacturing.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="courses card h-100 shadow-sm border-0">
+                    <img src="img/c7.jpeg" class="card-img-top object-fit-cover" alt="" style="height: 100%;">
+                    <div class="card-body details">
+                        <h6 class="card-title fw-bold">Wireman</h6>
+                        <p class="card-text text-muted small"><b>Wireman (2 Years)</b> – Covers domestic and commercial electrical installation and wiring work.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="courses card h-100 shadow-sm border-0">
+                    <img src="img/c8.jpg" class="card-img-top object-fit-cover" alt="" style="height: 100%;">
+                    <div class="card-body details">
+                        <h6 class="card-title fw-bold">Mechanic Motor Vehicle</h6>
+                        <p class="card-text text-muted small"><b>Mechanic Motor Vehicle (MMV) (2 Years) </b>– Trains students in automobile repair, servicing, and modern vehicle systems.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="courses card h-100 shadow-sm border-0">
+                    <img src="img/c9.webp" class="card-img-top object-fit-cover" alt="" style="height: 100%;">
+                    <div class="card-body details">
+                        <h6 class="card-title fw-bold">Welder</h6>
+                        <p class="card-text text-muted small"><b>Welder (1 Year)</b> – Short-duration engineering trade with steady demand in fabrication and construction</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="courses card h-100 shadow-sm border-0">
+                    <img src="img/c10.jpeg" class="card-img-top object-fit-cover" alt="" style="height: 100%;">
+                    <div class="card-body details">
+                        <h6 class="card-title fw-bold">Mechanic Diesel</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="courses card h-100 shadow-sm border-0">
+                    <img src="img/c11.jpg" class="card-img-top object-fit-cover" alt="" style="height: 100%;">
+                    <div class="card-body details">
+                        <h6 class="card-title fw-bold">FoundryMan</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="courses card h-100 shadow-sm border-0">
+                    <img src="img/c12.jpeg" class="card-img-top object-fit-cover" alt="" style="height: 100%;">
+                    <div class="card-body details">
+                        <h6 class="card-title fw-bold">Plumber</h6>
+                        <p class="card-text text-muted small"><b>Plumber (1 Year)</b> – High self-employment and infrastructure utility scope.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Courses section ends from here -->
 
 
-	<!-- Experts section starts from here -->
-	<section id="experts">
-		<h1>OUR INSTRUCTOR</h1>
-		<p>Replenish man have thing gathering lights yielding shall you</p>
-		<div class="expert-box">
-			<div class="profile">
-				<img src="img/ITI.png" alt="">
-				<h6>Rakesh Kumar</h6>
-				<p>Principle ITI Katihar</p>
-				<div class="pro-links">
-					<i class="fab fa-facebook"></i>
-					<i class="fab fa-instagram"></i>
-					<i class="fab fa-linkedin-in"></i>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Experts section ends from here -->
+    <!-- Registration section starts from here -->
+    <section id="registration" class="container py-5">
+        <div class="row g-4 align-items-center p-1">
+            <div class="col-lg-6 reminder p-4 border rounded bg-white shadow-sm">
+                <h1 class="h3 fw-bold">राजकीय औद्योगिक प्रशिक्षण संस्थान</h1>
+                <h3 class="h5 text-muted mb-4">For Any Query</h3>
 
-	<!-- Footer section starts from here -->
-	 <div id="content-footer"></div>
-	<!-- Footer section ends from here -->
+                <div class="header mb-3">
+                    <div class="toggle btn-group" role="group">
+                        <div class="btn btn-outline-secondary activeToggle" id="btn-12">12 hr</div>
+                        <div class="btn btn-outline-secondary" id="btn-24">24 hr</div>
+                    </div>
+                </div>
 
-	<script>
-		// Show menu links on burger click
-		$('#menu-btn').click(function(){
-			$('nav .navigation ul').addClass('active')
-		});
+                <div class="display p-1 bg-light rounded">
+                    <div class="time-wrap d-flex align-items-baseline gap-2">
+                        <div class="time h2 fw-bold mb-0" id="time">00:00:00</div>
+                        <div class="ampm text-muted" id="ampm">AM</div>
+                    </div>
+                    <div class="meta text-muted mt-2">
+                        <div id="date">January 1, 2025</div>
+                        <div id="day">Monday</div>
+                    </div>
+                </div>
+            </div>
 
-		// Hide navbar on click function
-		$('#menu-close').click(function(){
-			$('nav .navigation ul').removeClass('active')
-		});
-	</script>
-	<script>
-		 fetch('footer/footer.html')
+            <div class="col-lg-6 form p-4 border rounded bg-white shadow-sm">
+                <h3 class="h4 fw-bold mb-3">Send Any Query!</h3>
+
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Name" id="">
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" placeholder="Email ID" id="">
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Contact Number" id="">
+                </div>
+
+                <div class="btn p-0">
+                    <a href="#" class="btn btn-warning yellow px-4">Contact</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Registration section ends from here -->
+
+
+    <!-- Experts section starts from here -->
+    <section id="experts" class="container py-5 text-center">
+        <h1 class="fw-bold">OUR INSTRUCTOR</h1>
+        <p class="text-muted mb-5">Replenish man have thing gathering lights yielding shall you</p>
+        
+        <div class="row justify-content-center expert-box">
+            <div class="col-md-4">
+                <div class="profile card p-4 border shadow-sm">
+                    <img src="img/ITI.png" class="rounded-circle mx-auto mb-3" alt="" style="width: 100px; height: 100px; object-fit: cover;">
+                    <h6 class="fw-bold mb-1">Rakesh Kumar</h6>
+                    <p class="text-muted small mb-3">Principle ITI Katihar</p>
+                    <div class="pro-links d-flex justify-content-center gap-3 text-primary">
+                        <i class="fab fa-facebook fa-lg"></i>
+                        <i class="fab fa-instagram fa-lg"></i>
+                        <i class="fab fa-linkedin-in fa-lg"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Experts section ends from here -->
+
+    <!-- Footer section starts from here -->
+    <div id="content-footer"></div>
+    <!-- Footer section ends from here -->
+
+    <!-- Bootstrap 5 JS Bundle CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script>
+        // Show menu links on burger click (Kept your custom classes intact for style.css compatibility)
+        $('#menu-btn').click(function(){
+            $('nav .navigation ul').addClass('active')
+        });
+
+        // Hide navbar on click function
+        $('#menu-close').click(function(){
+            $('nav .navigation ul').removeClass('active')
+        });
+    </script>
+    <script>
+         fetch('footer/footer.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('content-footer').innerHTML = data;
             })
             .catch(error => console.error('Error loading HTML:', error));
-	</script>
+    </script>
+    <script>
+        const btn_12 = document.getElementById("btn-12")
+        const btn_24 = document.getElementById("btn-24")
+        const time = document.getElementById("time")
+        const ampm = document.getElementById("ampm")
+        const date = document.getElementById("date")
+        const day = document.getElementById("day")
+
+        let hour12 = true;
+
+        function pad(n) {
+            return String(n).padStart(2, "0")
+        }
+
+        const clock = () => {
+            const now = new Date()
+
+            let h = now.getHours()
+            let m = now.getMinutes()
+            let s = now.getSeconds()
+
+            let AmPm = "";
+
+            if (hour12) {
+                AmPm = h >= 12 ? "PM" : "AM";
+                h = h % 12 || 12;
+            }
+
+            time.textContent = `${pad(h)}:${pad(m)}:${pad(s)}`;
+            ampm.textContent = AmPm;
+            ampm.style.display = hour12 ? "block" : "none"
+
+            let nowDate = now.toLocaleDateString("en-US", {
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+            })
+
+            let nowDay = now.toLocaleDateString("en-US", {
+                weekday: "long"
+            })
+
+            date.textContent = nowDate;
+            day.textContent = nowDay;
+        }
+
+        btn_12.addEventListener("click", () => {
+            hour12 = true;
+            btn_12.classList.add("activeToggle");
+            btn_24.classList.remove("activeToggle");
+        })
+
+        btn_24.addEventListener("click", () => {
+            hour12 = false;
+            btn_12.classList.remove("activeToggle");
+            btn_24.classList.add("activeToggle");
+        })
+
+        setInterval(clock, 1000)
+    </script>
 </body>
 </html>

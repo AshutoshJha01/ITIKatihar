@@ -1,177 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Trades</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trades - राजकीय औद्योगिक प्रशिक्षण संस्थान, कटिहार</title>
 
-	<!-- font Awesome CDN link -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-	<!-- External CSS -->
-	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="about.css">
+    <!-- Font Awesome CDN link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 
-	<!-- JQuery CDN link -->
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- Custom CSS (if required for extra fine-tuning) -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
-<body>
-	<!-- Navigation start -->
-	<nav>
-		<img src="img/logo.jpg" class="logo" alt="">
+<body class="bg-light">
 
-		<div class="navigation">
-			<ul>
-				<i id="menu-close" class="fas fa-times"></i>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="about.html">About Us</a></li>
-				<li><a href="blog.html">Blog</a></li>
-				<li><a href="courses.html" class="active">Trades</a></li>
-				<li><a href="contact.html">Contact</a></li>
-			</ul>
+    <!-- Navigation start -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <!-- Brand / Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="img/logo.jpg" alt="Logo" width="40" height="40" class="rounded-circle me-2 object-fit-cover">
+                <span class="fw-semibold fs-6">ITI Katihar</span>
+            </a>
 
-			<img src="img/menu.png" id="menu-btn" alt="">
-		</div>
-	</nav>
-	<!-- Navigation ends -->
+            <!-- Mobile Toggle Button -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-lg-center gap-lg-2">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link active fw-bold" href="courses.html">Trades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navigation ends -->
 
-	<!-- Hero section starts from here -->
-	<section id="about-home">
-		<h2>
-			Trades
-		</h2>
-	</section>
-	<!-- Hero section ends from here -->
+    <!-- Hero section starts from here -->
+    <header class="bg-dark text-white text-center py-5 shadow-sm">
+        <div class="container py-4">
+            <h1 class="display-6 fw-bold mb-2">राजकीय औद्योगिक प्रशिक्षण संस्थान, कटिहार</h1>
+            <h2 class="h4 fw-light text-white-50 mb-0">Trades</h2>
+        </div>
+    </header>
+    <!-- Hero section ends from here -->
 
-		<!-- Courses section starts from here -->
-	<section id="course">
-		<h1>Our Popular Trades</h1>
-		<p></p>
+    <!-- Courses section starts from here -->
+    <main class="container my-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold text-dark">Our Popular Trades</h2>
+            <div class="mx-auto bg-primary rounded" style="width: 60px; height: 3px;"></div>
+        </div>
 
-		<div class="course-box">
-			<div onclick="window.location.href='course-inner.html'" class="courses">
-				<img src="img/c1.jpg" alt="">
-				<div class="details">
-					<h6>Electrician</h6>
-					<p><b>Electrician (2 Years) </b>One of the highest-demand engineering trades, focusing on electrical wiring, machinery, and power systems</p>
-				</div>
-				
-			</div>
+        <div class="row g-4">
+            <!-- Electrician -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0 cursor-pointer transition-hover" onclick="window.location.href='course-inner.html'" role="button" style="cursor: pointer;">
+                    <img src="img/c1.jpg" class="card-img-top object-fit-cover" style="height: 200px;" alt="Electrician">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold text-primary">Electrician</h5>
+                        <p class="card-text text-muted small flex-grow-1"><b>Electrician (2 Years) </b>One of the highest-demand engineering trades, focusing on electrical wiring, machinery, and power systems</p>
+                    </div>
+                </div>
+            </div>
 
-			<div class="courses">
-				<img src="img/c2.png" alt="">
-				<div class="details">
-					<h6>Fitter</h6>
-					<p><b>Fitter (2 Years) </b>– Core industrial and manufacturing trade with strong career and apprenticeship potential (including Indian Railways).</p>
-				</div>
-				
-			</div>
+            <!-- Fitter -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="img/c2.png" class="card-img-top object-fit-cover" style="height: 200px;" alt="Fitter">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold text-primary">Fitter</h5>
+                        <p class="card-text text-muted small flex-grow-1"><b>Fitter (2 Years) </b>– Core industrial and manufacturing trade with strong career and apprenticeship potential (including Indian Railways).</p>
+                    </div>
+                </div>
+            </div>
 
-			<div class="courses">
-				<img src="img/c3.jpeg" alt="">
-				<div class="details">
-					<h6>Electronic Mech.</h6>
+            <!-- Electronic Mech. -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="img/c3.jpeg" class="card-img-top object-fit-cover" style="height: 200px;" alt="Electronic Mechanic">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold text-primary">Electronic Mech.</h5>
+                        <p class="card-text text-muted small flex-grow-1"><b>Electronic Mechanic (2 Years)</b> – Focused on troubleshooting, repairing, and maintaining electronic equipment and circuits.</p>
+                    </div>
+                </div>
+            </div>
 
-				</div>
-				
-			</div>
+            <!-- IT & Electronics System Maintenance -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="img/c4.jpeg" class="card-img-top object-fit-cover" style="height: 200px;" alt="ICTSM">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold text-primary">Information Technology and Electronics System Maintenance</h5>
+                        <p class="card-text text-muted small flex-grow-1"><b>Information Technology and Electronics System Maintenance (ICTSM) (2 Years)</b> – Focuses on computer hardware, electronics, and system maintenance.</p>
+                    </div>
+                </div>
+            </div>
 
-			<div class="courses">
-				<img src="img/c4.jpeg" alt="">
-				<div class="details">
-					<h6>Information Technology and Electronics System Maintenance</h6>
-					<p><b>Information Technology and Electronics System Maintenance (ICTSM) (2 Years)</b> – Focuses on computer hardware, electronics, and system maintenance.</p>
-				</div>
-				
-			</div>
+            <!-- Machinist -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="img/c5.jpg" class="card-img-top object-fit-cover" style="height: 200px;" alt="Machinist">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold text-primary">Machinist</h5>
+                        <p class="card-text text-muted small flex-grow-1"><b>Machinist (2 Years)</b> – Training in operating advanced machine tools and precision manufacturing processes.</p>
+                    </div>
+                </div>
+            </div>
 
-			<div class="courses">
-				<img src="img/c5.jpg" alt="">
-				<div class="details">
-					<h6>Machinist</h6>
-				</div>
-			</div>
+            <!-- Turner -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="img/c6.jpg" class="card-img-top object-fit-cover" style="height: 200px;" alt="Turner">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold text-primary">Turner</h5>
+                        <p class="card-text text-muted small flex-grow-1"><b>Turner (2 Years) </b>– Precision machine-shop trade essential for metal-cutting and component manufacturing.</p>
+                    </div>
+                </div>
+            </div>
 
-			<div class="courses">
-				<img src="img/c6.jpg" alt="">
-				<div class="details">
-					<h6>Turner</h6>
-					<p><b>Turner (2 Years) </b>– Precision machine-shop trade essential for metal-cutting and component manufacturing.</p>
-				</div>
-			</div>
+            <!-- Wireman -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="img/c7.jpeg" class="card-img-top object-fit-cover" style="height: 200px;" alt="Wireman">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold text-primary">Wireman</h5>
+                        <p class="card-text text-muted small flex-grow-1"><b>Wireman (2 Years)</b> – Covers domestic and commercial electrical installation and wiring work.</p>
+                    </div>
+                </div>
+            </div>
 
-			<div class="courses">
-				<img src="img/c7.jpeg" alt="">
-				<div class="details">
-					<h6>Wireman</h6>
-					<p><b>Wireman (2 Years)</b> – Covers domestic and commercial electrical installation and wiring work.</p>
-				</div>
-			</div>
+            <!-- Mechanic Motor Vehicle -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="img/c8.jpg" class="card-img-top object-fit-cover" style="height: 200px;" alt="Mechanic Motor Vehicle">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold text-primary">Mechanic Motor Vehicle</h5>
+                        <p class="card-text text-muted small flex-grow-1"><b>Mechanic Motor Vehicle (MMV) (2 Years) </b>– Trains students in automobile repair, servicing, and modern vehicle systems.</p>
+                    </div>
+                </div>
+            </div>
 
-			<div class="courses">
-				<img src="img/c8.jpg" alt="">
-				<div class="details">
-					<h6>Mechanic Motor Vehicle </h6>
-					<p><b>Mechanic Motor Vehicle (MMV) (2 Years) </b>– Trains students in automobile repair, servicing, and modern vehicle systems.</p>
-				</div>
-			</div>
+            <!-- Welder -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="img/c9.webp" class="card-img-top object-fit-cover" style="height: 200px;" alt="Welder">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold text-primary">Welder</h5>
+                        <p class="card-text text-muted small flex-grow-1"><b>Welder (1 Year)</b> – Short-duration engineering trade with steady demand in fabrication and construction</p>
+                    </div>
+                </div>
+            </div>
 
-			<div class="courses">
-				<img src="img/c9.webp" alt="">
-				<div class="details">
-					<h6>Welder</h6>
-					<p><b>Welder (1 Year)</b> – Short-duration engineering trade with steady demand in fabrication and construction</p>
-				</div>
-			</div>
+            <!-- Mechanic Diesel -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="img/c10.jpeg" class="card-img-top object-fit-cover" style="height: 200px;" alt="Mechanic Diesel">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold text-primary">Mechanic Diesel</h5>
+                        <p class="card-text text-muted small flex-grow-1"><b>Mechanic Diesel (1 Year)</b> – Comprehensive training on diesel engines, maintenance, and heavy machinery mechanics.</p>
+                    </div>
+                </div>
+            </div>
 
-			<div class="courses">
-				<img src="img/c10.jpeg" alt="">
-				<div class="details">
-					<h6>Mechanic Diesel</h6>
-				</div>
-			</div>
+            <!-- FoundryMan -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="img/c11.jpg" class="card-img-top object-fit-cover" style="height: 200px;" alt="FoundryMan">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold text-primary">FoundryMan</h5>
+                        <p class="card-text text-muted small flex-grow-1"><b>FoundryMan (1 Year)</b> – Focuses on metal casting, molding techniques, and foundry operations.</p>
+                    </div>
+                </div>
+            </div>
 
-			<div class="courses">
-				<img src="img/c11.jpg" alt="">
-				<div class="details">
-					<h6>FoundryMan</h6>
-				</div>
-			</div>
+            <!-- Plumber -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="img/c12.jpeg" class="card-img-top object-fit-cover" style="height: 200px;" alt="Plumber">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold text-primary">Plumber</h5>
+                        <p class="card-text text-muted small flex-grow-1"><b>Plumber (1 Year)</b> – High self-employment and infrastructure utility scope.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Courses section ends from here -->
 
-			<div class="courses">
-				<img src="img/c12.jpeg" alt="">
-				<div class="details">
-					<h6>Plumber</h6>
-					<p><b>Plumber (1 Year)</b> – High self-employment and infrastructure utility scope.</p>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Courses section ends from here -->
+    <!-- Footer section starts from here -->
+    <div id="content-footer"></div>
+    <!-- Footer section ends from here -->
 
-	<!-- Footer section starts from here -->
-	<div id="content-footer"></div>
-	<!-- Footer section ends from here -->
+    <!-- Bootstrap JS Bundle CDN (Includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-	<script>
-		// Show menu links on burger click
-		$('#menu-btn').click(function(){
-			$('nav .navigation ul').addClass('active')
-		});
-
-		// Hide navbar on click function
-		$('#menu-close').click(function(){
-			$('nav .navigation ul').removeClass('active')
-		});
-	</script>
-	<script>
-		 fetch('footer/footer.html')
+    <!-- Footer Dynamic Loader Script -->
+    <script>
+         fetch('footer/footer.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('content-footer').innerHTML = data;
             })
             .catch(error => console.error('Error loading HTML:', error));
-	</script>
+    </script>
 </body>
 </html>
