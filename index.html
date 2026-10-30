@@ -1,376 +1,1598 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GOVT. ITI KATIHAR</title>
+    <title>GOVT. ITI KATIHAR | राजकीय औद्योगिक प्रशिक्षण संस्थान - कटिहार</title>
 
-    <!-- Bootstrap 5 CDN CSS -->
+    <!-- Google Fonts: Poppins (English) & Noto Sans Devanagari (Hindi) & JetBrains Mono (Clock) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3.3 CDN CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    <!-- Font Awesome CDN link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <!-- Font Awesome 6 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-    <!-- External CSS -->
-    
-
-    <!-- JQuery CDN link -->
+    <!-- JQuery CDN (Preserved for compatibility with original scripts) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Custom Institutional Styling -->
+    <style>
+        :root {
+            --iti-navy: #0a1931;
+            --iti-blue: #153e75;
+            --iti-royal: #1d4ed8;
+            --iti-amber: #f59e0b;
+            --iti-amber-dark: #d97706;
+            --iti-light: #f8fafc;
+            --iti-slate: #64748b;
+            --iti-border: #e2e8f0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 85px;
+        }
+
+        body {
+            font-family: 'Poppins', 'Noto Sans Devanagari', sans-serif;
+            color: #1e293b;
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Top Institutional Announcement Bar */
+        .top-gov-bar {
+            background: linear-gradient(90deg, #071124 0%, #153e75 100%);
+            color: #f8fafc;
+            font-size: 0.82rem;
+            border-bottom: 2px solid var(--iti-amber);
+        }
+
+        .top-gov-bar a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .top-gov-bar a:hover {
+            color: var(--iti-amber);
+        }
+
+        .ncvt-pill {
+            background: rgba(245, 158, 11, 0.18);
+            border: 1px solid rgba(245, 158, 11, 0.55);
+            color: #fcd34d;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+        }
+
+        /* Sticky Navbar */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.97) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--iti-border);
+            transition: all 0.3s ease;
+        }
+
+        .brand-logo-wrap {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo {
+            width: 54px;
+            height: 54px;
+            object-fit: contain;
+            border-radius: 50%;
+            border: 2px solid var(--iti-amber);
+            padding: 2px;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(10, 25, 49, 0.12);
+        }
+
+        .brand-title-en {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--iti-navy);
+            letter-spacing: 0.3px;
+            line-height: 1.15;
+            margin: 0;
+        }
+
+        .brand-title-hi {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--iti-blue);
+            margin: 0;
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 600;
+            font-size: 0.94rem;
+            color: #334155 !important;
+            padding: 0.5rem 0.85rem !important;
+            border-radius: 8px;
+            transition: all 0.25s ease;
+            position: relative;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--iti-royal) !important;
+            background-color: rgba(29, 78, 216, 0.06);
+        }
+
+        .btn-nav-cta {
+            background: linear-gradient(135deg, var(--iti-amber) 0%, var(--iti-amber-dark) 100%);
+            color: #0a1931 !important;
+            font-weight: 700;
+            border-radius: 50px;
+            padding: 0.5rem 1.25rem !important;
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+            border: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn-nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(245, 158, 11, 0.45);
+            color: #000 !important;
+        }
+
+        /* Hero Video & Animated Blueprint Header */
+        header.hero-header {
+            position: relative;
+            background-color: var(--iti-navy);
+            min-height: 82vh;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 4.5rem 0 6rem 0;
+        }
+
+        header.hero-header video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: 1;
+            transform: translateX(-50%) translateY(-50%);
+            object-fit: cover;
+            opacity: 0.35;
+        }
+
+        #heroCanvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        header.hero-header .overlay {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(21, 62, 117, 0.72) 0%, rgba(10, 25, 49, 0.94) 100%);
+            z-index: 3;
+        }
+
+        header.hero-header .hero-content {
+            position: relative;
+            z-index: 4;
+        }
+
+        .gov-crest-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.5);
+            color: #fde68a;
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            backdrop-filter: blur(6px);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-hindi-title {
+            font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
+            font-weight: 800;
+            line-height: 1.3;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+            letter-spacing: -0.3px;
+        }
+
+        .hero-hindi-lead {
+            font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
+            max-width: 850px;
+            margin: 1.25rem auto 2rem auto;
+            color: #e2e8f0;
+            font-size: 1.12rem;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+
+        .btn-hero-primary {
+            background: linear-gradient(135deg, var(--iti-amber) 0%, var(--iti-amber-dark) 100%);
+            color: #0a1931;
+            font-weight: 700;
+            padding: 0.85rem 2rem;
+            border-radius: 50px;
+            border: none;
+            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.35);
+            transition: all 0.25s ease;
+        }
+
+        .btn-hero-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(245, 158, 11, 0.5);
+            color: #000;
+        }
+
+        .btn-hero-outline {
+            background: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+            font-weight: 600;
+            padding: 0.85rem 2rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(6px);
+            transition: all 0.25s ease;
+        }
+
+        .btn-hero-outline:hover {
+            background: #ffffff;
+            color: var(--iti-navy);
+            transform: translateY(-3px);
+        }
+
+        /* Quick Stats Floating Strip */
+        .stats-strip-wrapper {
+            margin-top: -3.2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stats-card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(10, 25, 49, 0.09);
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            padding: 1.5rem 1rem;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            padding: 0.5rem 1rem;
+        }
+
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: rgba(29, 78, 216, 0.08);
+            color: var(--iti-royal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35rem;
+            flex-shrink: 0;
+        }
+
+        /* Section Headings */
+        .section-badge {
+            display: inline-block;
+            background: rgba(29, 78, 216, 0.09);
+            color: var(--iti-royal);
+            font-weight: 700;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            padding: 5px 14px;
+            border-radius: 50px;
+            margin-bottom: 0.65rem;
+        }
+
+        .section-heading {
+            font-weight: 800;
+            color: var(--iti-navy);
+            position: relative;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Features Section (#features) */
+        .fea-box {
+            background: #ffffff;
+            border-radius: 16px !important;
+            border: 1px solid var(--iti-border) !important;
+            padding: 2.25rem 1.75rem !important;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fea-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--iti-royal), var(--iti-amber));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.35s ease;
+        }
+
+        .fea-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 35px rgba(10, 25, 49, 0.08) !important;
+            border-color: rgba(29, 78, 216, 0.25) !important;
+        }
+
+        .fea-box:hover::before {
+            transform: scaleX(1);
+        }
+
+        .fea-icon-circle {
+            width: 68px;
+            height: 68px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, rgba(29, 78, 216, 0.1) 0%, rgba(245, 158, 11, 0.15) 100%);
+            color: var(--iti-royal);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .fea-box:hover .fea-icon-circle {
+            background: var(--iti-royal);
+            color: #ffffff;
+            transform: rotate(-5deg) scale(1.05);
+        }
+
+        .fea-box h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--iti-navy);
+            margin-bottom: 0.75rem;
+        }
+
+        /* Courses / Trades Section (#course) */
+        .trades-section-wrapper {
+            background-color: #f8fafc;
+            border-top: 1px solid var(--iti-border);
+            border-bottom: 1px solid var(--iti-border);
+        }
+
+        .filter-btn {
+            border-radius: 50px;
+            padding: 0.5rem 1.25rem;
+            font-weight: 600;
+            font-size: 0.88rem;
+            border: 1px solid #cbd5e1;
+            background: #ffffff;
+            color: #475569;
+            transition: all 0.2s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--iti-navy);
+            color: #ffffff;
+            border-color: var(--iti-navy);
+            box-shadow: 0 4px 12px rgba(10, 25, 49, 0.18);
+        }
+
+        .courses.card {
+            border-radius: 16px;
+            overflow: hidden;
+            background: #ffffff;
+            border: 1px solid rgba(226, 232, 240, 0.9) !important;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+        }
+
+        .courses.card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 18px 32px rgba(10, 25, 49, 0.12) !important;
+            border-color: rgba(29, 78, 216, 0.35) !important;
+        }
+
+        .trade-img-wrap {
+            position: relative;
+            height: 205px;
+            overflow: hidden;
+            background-color: #1e293b;
+        }
+
+        .trade-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .courses.card:hover .trade-img-wrap img {
+            transform: scale(1.07);
+        }
+
+        .trade-badge-duration {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(10, 25, 49, 0.85);
+            backdrop-filter: blur(4px);
+            color: #fcd34d;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 50px;
+            border: 1px solid rgba(245, 158, 11, 0.4);
+        }
+
+        .trade-badge-ncvt {
+            position: absolute;
+            bottom: 12px;
+            left: 12px;
+            background: var(--iti-royal);
+            color: #ffffff;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 6px;
+            letter-spacing: 0.4px;
+        }
+
+        .courses .card-body {
+            padding: 1.35rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .courses .card-title {
+            font-size: 1.08rem;
+            color: var(--iti-navy);
+            margin-bottom: 0.5rem;
+            line-height: 1.35;
+        }
+
+        .trade-card-footer {
+            margin-top: auto;
+            padding-top: 0.85rem;
+            border-top: 1px dashed #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--iti-royal);
+        }
+
+        /* Registration & Live Clock Section (#registration) */
+        #registration {
+            background: linear-gradient(135deg, #0a1931 0%, #153e75 100%);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            color: #ffffff;
+            box-shadow: 0 20px 45px rgba(10, 25, 49, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reminder-card {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 20px;
+            padding: 2rem;
+            height: 100%;
+        }
+
+        .clock-display-box {
+            background: rgba(7, 17, 36, 0.75);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: inset 0 2px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        #time {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            color: #fcd34d;
+            letter-spacing: 2px;
+            text-shadow: 0 0 18px rgba(245, 158, 11, 0.35);
+        }
+
+        #ampm {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            color: #38bdf8;
+            font-size: 1.1rem;
+        }
+
+        .activeToggle {
+            background-color: var(--iti-amber) !important;
+            color: #0a1931 !important;
+            border-color: var(--iti-amber) !important;
+            font-weight: 700 !important;
+        }
+
+        .query-form-card {
+            background: #ffffff;
+            color: #1e293b;
+            border-radius: 20px;
+            padding: 2.25rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            height: 100%;
+        }
+
+        .query-form-card .form-control,
+        .query-form-card .form-select {
+            border-radius: 10px;
+            padding: 0.7rem 1rem;
+            border: 1px solid #cbd5e1;
+            font-size: 0.92rem;
+        }
+
+        .query-form-card .form-control:focus,
+        .query-form-card .form-select:focus {
+            border-color: var(--iti-royal);
+            box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.15);
+        }
+
+        .yellow.btn {
+            background: linear-gradient(135deg, var(--iti-amber) 0%, var(--iti-amber-dark) 100%);
+            border: none;
+            color: #0a1931;
+            font-weight: 700;
+            padding: 0.8rem 2rem;
+            border-radius: 10px;
+            transition: all 0.25s ease;
+        }
+
+        .yellow.btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4);
+            color: #000;
+        }
+
+        /* Leadership / Principal Section (#experts) */
+        .principal-card {
+            border-radius: 20px;
+            border: 1px solid var(--iti-border);
+            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+            box-shadow: 0 15px 35px rgba(10, 25, 49, 0.07);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .principal-avatar-wrap {
+            position: relative;
+            display: inline-block;
+        }
+
+        .principal-avatar {
+            width: 130px;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--iti-amber);
+            padding: 3px;
+            background: #ffffff;
+            box-shadow: 0 8px 20px rgba(10, 25, 49, 0.15);
+        }
+
+        .pro-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(29, 78, 216, 0.08);
+            color: var(--iti-royal);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .pro-links a:hover {
+            background: var(--iti-royal);
+            color: #ffffff;
+            transform: translateY(-3px);
+        }
+
+        /* Footer Styling */
+        .iti-footer {
+            background-color: #071124;
+            color: #cbd5e1;
+            border-top: 4px solid var(--iti-amber);
+        }
+
+        .iti-footer h5 {
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 1.25rem;
+            position: relative;
+            padding-bottom: 0.6rem;
+        }
+
+        .iti-footer h5::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--iti-amber);
+            border-radius: 2px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--iti-amber);
+            transform: translateX(4px);
+        }
+
+        /* Back to top button */
+        #backToTop {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: var(--iti-amber);
+            color: var(--iti-navy);
+            border: none;
+            box-shadow: 0 6px 18px rgba(10, 25, 49, 0.25);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            z-index: 999;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        #backToTop:hover {
+            background: var(--iti-navy);
+            color: #ffffff;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 767.98px) {
+            header.hero-header {
+                min-height: 75vh;
+                padding: 3rem 0 4.5rem 0;
+            }
+            .hero-hindi-title {
+                font-size: 1.95rem;
+            }
+            .hero-hindi-lead {
+                font-size: 0.98rem;
+            }
+            #registration {
+                padding: 1.75rem 1.15rem;
+                border-radius: 16px;
+            }
+            .reminder-card,
+            .query-form-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Navigation start -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm px-3">
-        <div class="container-fluid">
-            <!-- Logo -->
-            <a class="navbar-brand" href="index.html">
-                <img src="img/logo.jpg" class="logo" alt="Logo" height="50">
+    <!-- Top Government Affiliation Bar -->
+    <div class="top-gov-bar py-2 px-3">
+        <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
+            <div class="d-flex align-items-center gap-2 flex-wrap">
+                <i class="fa-solid fa-landmark text-warning"></i>
+                <span><strong>श्रम संसाधन विभाग, बिहार सरकार</strong> <span class="d-none d-md-inline">| Dept. of Labour Resources, Govt. of Bihar</span></span>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+                <span class="ncvt-pill"><i class="fa-solid fa-certificate me-1"></i>NCVT / SCVT Recognized</span>
+                <span class="d-none d-sm-inline text-light small"><i class="fa-solid fa-location-dot text-warning me-1"></i>Katihar, Bihar - 854105</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Start -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top shadow-sm py-2 px-2">
+        <div class="container">
+            <!-- Brand Logo & Name -->
+            <a class="brand-logo-wrap" href="#home">
+                <img src="img/logo.jpg" class="logo" alt="Govt. ITI Katihar Logo"
+                     onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2246%22 fill=%22%230a1931%22 stroke=%22%23f59e0b%22 stroke-width=%224%22/><path d=%22M50 18 L55 28 L66 26 L64 37 L74 42 L67 51 L73 61 L62 64 L61 75 L50 71 L39 75 L38 64 L27 61 L33 51 L26 42 L36 37 L34 26 L45 28 Z%22 fill=%22none%22 stroke=%22%23f59e0b%22 stroke-width=%223%22/><text x=%2250%22 y=%2255%22 font-family=%22Arial%22 font-size=%2218%22 font-weight=%22bold%22 fill=%22%23ffffff%22 text-anchor=%22middle%22>ITI</text></svg>';">
+                <div>
+                    <p class="brand-title-en">GOVT. ITI KATIHAR</p>
+                    <p class="brand-title-hi">राजकीय औद्योगिक प्रशिक्षण संस्थान, कटिहार</p>
+                </div>
             </a>
 
             <!-- Mobile Menu Toggle Button -->
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon" id="menu-btn"></span>
             </button>
 
             <!-- Navigation Links -->
             <div class="collapse navbar-collapse justify-content-end navigation" id="navbarNav">
-                <ul class="navbar-nav align-items-lg-center gap-lg-3">
+                <ul class="navbar-nav align-items-lg-center gap-lg-1 mt-3 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Home</a>
+                        <a class="nav-link active" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About Us</a>
+                        <a class="nav-link" href="#features">About &amp; Features</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="blog.html">Blog</a>
+                        <a class="nav-link" href="#course">Trades (12)</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="courses.html">Trades</a>
+                        <a class="nav-link" href="#registration">Query Desk</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
+                        <a class="nav-link" href="#experts">Principal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#content-footer">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                        <a class="nav-link btn-nav-cta text-center" href="#registration">
+                            <i class="fa-solid fa-paper-plane me-1"></i> Ask Query
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <!-- Navigation ends -->
+    <!-- Navigation Ends -->
 
+    <!-- Hero Video & Animated Blueprint Header -->
+    <header id="home" class="hero-header">
+        <!-- Transparent dark gradient overlay -->
+        <div class="overlay"></div>
 
-    <!-- Hero section starts from here -->
-    <section id="home" class="container-fluid text-white text-center">
-        
-        <!-- <div class="card bg-dark text-white border-0">
-            <!-- The responsive background image -->
-            <img src="img/back.jpg" class="card-img" alt="Background Image">
-            
-            <!-- The overlay element containing your text -->
-            <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center text-center">
-               <div class="col-lg-8">
-                <h2 class="display-5 fw-bold mb-3">
-                    राजकीय औद्योगिक प्रशिक्षण संस्थान - कटिहार 
-                </h2>
-                <p class="lead  mb-4">
-                    राजकीय औद्योगिक प्रशिक्षण संस्थान (Govt. ITI), कटिहार बिहार सरकार के श्रम संसाधन विभाग द्वारा संचालित एक प्रमुख तकनीकी संस्थान है। यह संस्थान स्थानीय युवाओं को विभिन्न तकनीकी और गैर-तकनीकी ट्रेडों में रोजगारपरक कौशल प्रशिक्षण प्रदान कर उन्हें आत्मनिर्भर बनाने का कार्य करता है।
-                </p>
-                <div class="btn d-flex justify-content-center gap-3">
-                    <a href="#" class="btn btn-primary blue px-4 py-2">Learn More</a>
-                    <a href="#" class="btn btn-warning yellow px-4 py-2">Visit Trades</a>
+        <!-- Animated technical canvas background (ensures rich visuals even without local video file) -->
+        <canvas id="heroCanvas"></canvas>
+
+        <!-- Original HTML5 video background element preserved -->
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            <source src="video/stars.mp4" type="video/mp4">
+        </video>
+
+        <!-- Hero Content -->
+        <div class="container hero-content">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-10 text-white">
+                    <div class="gov-crest-badge">
+                        <i class="fa-solid fa-gears text-warning"></i>
+                        <span>कौशलं बलम् • Empowering Youth Through Technical Skill</span>
+                    </div>
+
+                    <h1 class="display-4 hero-hindi-title mb-3">
+                        राजकीय औद्योगिक प्रशिक्षण संस्थान - कटिहार
+                    </h1>
+
+                    <p class="hero-hindi-lead">
+                        राजकीय औद्योगिक प्रशिक्षण संस्थान (Govt. ITI), कटिहार बिहार सरकार के श्रम संसाधन विभाग द्वारा संचालित एक प्रमुख तकनीकी संस्थान है। यह संस्थान स्थानीय युवाओं को विभिन्न तकनीकी और गैर-तकनीकी ट्रेडों में रोजगारपरक कौशल प्रशिक्षण प्रदान कर उन्हें आत्मनिर्भर बनाने का कार्य करता है।
+                    </p>
+
+                    <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+                        <a href="#course" class="btn btn-hero-primary">
+                            <i class="fa-solid fa-screwdriver-wrench me-2"></i>Explore Technical Trades
+                        </a>
+                        <a href="#registration" class="btn btn-hero-outline">
+                            <i class="fa-solid fa-headset me-2"></i>Admission &amp; Query Desk
+                        </a>
+                    </div>
                 </div>
             </div>
+        </div>
+    </header>
+
+    <!-- Floating Quick-Stats Bar -->
+    <div class="container stats-strip-wrapper">
+        <div class="stats-card">
+            <div class="row g-3 text-center text-md-start">
+                <div class="col-6 col-lg-3 border-end-md">
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                        <div>
+                            <h4 class="fw-bold mb-0 text-dark">12+ Trades</h4>
+                            <small class="text-muted">1 &amp; 2 Year Programs</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 border-end-lg">
+                    <div class="stat-item">
+                        <div class="stat-icon" style="background: rgba(245, 158, 11, 0.14); color: #d97706;">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+                        <div>
+                            <h4 class="fw-bold mb-0 text-dark">NCVT / SCVT</h4>
+                            <small class="text-muted">Govt. Certified</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 border-end-md">
+                    <div class="stat-item">
+                        <div class="stat-icon" style="background: rgba(16, 185, 129, 0.12); color: #059669;">
+                            <i class="fa-solid fa-industry"></i>
+                        </div>
+                        <div>
+                            <h4 class="fw-bold mb-0 text-dark">100% Practical</h4>
+                            <small class="text-muted">Modern Workshops</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="stat-item">
+                        <div class="stat-icon" style="background: rgba(139, 92, 246, 0.12); color: #7c3aed;">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <div>
+                            <h4 class="fw-bold mb-0 text-dark">Job &amp; Apprentice</h4>
+                            <small class="text-muted">Railways, PSUs &amp; Pvt.</small>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div> -->
-     
-    </section>
-    <!-- Hero section ends from here -->
+        </div>
+    </div>
 
-
-    <!-- Features section starts from here -->
-    <section id="features" class="container py-5">
+    <!-- Features Section (#features) -->
+    <section id="features" class="container py-5 my-3">
         <div class="text-center mb-5">
-            <h1 class="fw-bold">Awesome Features</h1>
-            <p class="text-muted">Government Industrial Training Institute (Govt ITI) in Katihar, Bihar, offers several standout features and technical programs</p>
+            <span class="section-badge">Why Choose Govt. ITI Katihar</span>
+            <h1 class="section-heading display-6">Awesome Features</h1>
+            <p class="text-muted mx-auto" style="max-width: 680px;">
+                Government Industrial Training Institute (Govt ITI) in Katihar, Bihar, offers several standout features and technical programs designed for modern industrial careers.
+            </p>
         </div>
 
         <div class="row g-4 fea-base">
             <div class="col-md-4">
-                <div class="fea-box p-4 border rounded shadow-sm h-100 text-center">
-                    <i class="fas fa-graduation-cap fa-2x mb-3 text-primary"></i>
+                <div class="fea-box h-100 text-center shadow-sm">
+                    <div class="fea-icon-circle">
+                        <i class="fas fa-graduation-cap fa-2x"></i>
+                    </div>
                     <h3>Diverse Technical Trades</h3>
-                    <p class="text-muted small">
+                    <p class="text-muted small mb-0" style="line-height: 1.7;">
                         The institute runs a wide range of NCVT-recognized technical and vocational trades, including Electrician (FT/ELEC), Fitter, Wireman (WM), Welder (WDR), Turner (TR), Draughtsman, Plumber (PLB), Motor Mechanic Vehicle (MMV), Information and Communication Technology System Maintenance (ICTSM), and more.
                     </p>
                 </div>
             </div>
 
             <div class="col-md-4">
-                <div class="fea-box p-4 border rounded shadow-sm h-100 text-center">
-                    <i class="fa-solid fa-book-bookmark fa-2x mb-3 text-primary"></i>
+                <div class="fea-box h-100 text-center shadow-sm">
+                    <div class="fea-icon-circle">
+                        <i class="fa-solid fa-book-bookmark fa-2x"></i>
+                    </div>
                     <h3>Industry-Ready Training</h3>
-                    <p class="text-muted small">
-                         Workshops are equipped with practical tools and machinery to give students hands-on experience for immediate entry into the workforce.
+                    <p class="text-muted small mb-0" style="line-height: 1.7;">
+                        Workshops are equipped with practical tools, heavy machinery, and modern diagnostic instruments to give students hands-on experience for immediate entry into the industrial workforce.
                     </p>
                 </div>
             </div>
 
             <div class="col-md-4">
-                <div class="fea-box p-4 border rounded shadow-sm h-100 text-center">
-                    <i class="fas fa-award fa-2x mb-3 text-primary"></i>
+                <div class="fea-box h-100 text-center shadow-sm">
+                    <div class="fea-icon-circle">
+                        <i class="fas fa-award fa-2x"></i>
+                    </div>
                     <h3>Active Placement Drives</h3>
-                    <p class="text-muted small">
-                        The institute regularly organizes campus placement programs and recruitment drives to connect trained youth with employment and apprenticeship opportunities. 
+                    <p class="text-muted small mb-0" style="line-height: 1.7;">
+                        The institute regularly organizes campus placement programs, Rojgar Melas, and recruitment drives to connect trained youth with employment and National Apprenticeship (NAPS) opportunities.
                     </p>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Features section ends from here -->
 
+    <!-- Courses / Trades Section (#course) -->
+    <section id="course" class="trades-section-wrapper py-5">
+        <div class="container py-3">
+            <div class="text-center mb-4">
+                <span class="section-badge">NCVT &amp; SCVT Approved Curriculum</span>
+                <h1 class="section-heading display-6">Our Popular Trades</h1>
+                <p class="text-muted mx-auto" style="max-width: 700px;">
+                    The Government Industrial Training Institute Katihar offers several top NCVT- and SCVT-recognized technical and vocational trades. Click any trade card for full career &amp; syllabus details.
+                </p>
+            </div>
 
-    <!-- Courses section starts from here -->
-    <section id="course" class="container py-5 bg-light">
-        <div class="text-center mb-5">
-            <h1 class="fw-bold">Our Popular Trades</h1>
-            <p class="text-muted">The Government Industrial Training Institute Katihar offers several top NCVT- and SCVT-recognized technical and vocational trades</p>
-        </div>
-
-        <div class="row g-4 course-box">
-            <div class="col-md-4 col-sm-6">
-                <div onclick="window.location.href='course-inner.html'" class="courses card h-100 shadow-sm border-0 cursor-pointer" style="cursor: pointer;">
-                    <img src="img/c1.jpg" class="card-img-top object-fit-cover" alt="" style="height: 100%;">
-                    <div class="card-body details">
-                        <h6 class="card-title fw-bold">Electrician</h6>
-                        <p class="card-text text-muted small"><b>Electrician (2 Years) </b>One of the highest-demand engineering trades, focusing on electrical wiring, machinery, and power systems</p>
+            <!-- Interactive Filter Pills & Search Bar -->
+            <div class="row g-3 align-items-center justify-content-between mb-4">
+                <div class="col-lg-7 d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start" id="tradeFilterGroup">
+                    <button type="button" class="filter-btn active" data-filter="all">All Trades (12)</button>
+                    <button type="button" class="filter-btn" data-filter="2-year">2-Year Engineering Trades (8)</button>
+                    <button type="button" class="filter-btn" data-filter="1-year">1-Year Trades (4)</button>
+                </div>
+                <div class="col-lg-4">
+                    <div class="input-group shadow-sm rounded-pill overflow-hidden bg-white border">
+                        <span class="input-group-text bg-white border-0 ps-3 text-muted">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </span>
+                        <input type="text" id="tradeSearchInput" class="form-control border-0 shadow-none" placeholder="Search trade (e.g., Electrician, Fitter)...">
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4 col-sm-6">
-                <div class="courses card h-100 shadow-sm border-0">
-                    <img src="img/c2.jpg" class="card-img-top object-fit-cover" alt="" style="height: 100%;">
-                    <div class="card-body details">
-                        <h6 class="card-title fw-bold">Fitter</h6>
-                        <p class="card-text text-muted small"><b>Fitter (2 Years) </b>– Core industrial and manufacturing trade with strong career and apprenticeship potential (including Indian Railways).</p>
+            <!-- 12 Trade Cards Grid -->
+            <div class="row g-4 course-box" id="tradesGrid">
+
+                <!-- 1. Electrician -->
+                <div class="col-lg-4 col-md-6 trade-item" data-duration="2-year" data-name="electrician electrical wiring power">
+                    <div class="courses card h-100 shadow-sm" onclick="openTradeModal('Electrician')">
+                        <div class="trade-img-wrap">
+                            <img src="img/c1.jpg" alt="Electrician Trade"
+                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80';">
+                            <span class="trade-badge-duration"><i class="fa-regular fa-clock me-1"></i>2 Years</span>
+                            <span class="trade-badge-ncvt">NCVT / SCVT</span>
+                        </div>
+                        <div class="card-body details">
+                            <h6 class="card-title fw-bold">Electrician</h6>
+                            <p class="card-text text-muted small mb-3">
+                                <b>Electrician (2 Years)</b> – One of the highest-demand engineering trades, focusing on electrical wiring, transformers, motors, machinery, and power distribution systems.
+                            </p>
+                            <div class="trade-card-footer">
+                                <span><i class="fa-solid fa-user-check me-1 text-success"></i>Eligibility: 10th Pass</span>
+                                <span>View Scope <i class="fa-solid fa-arrow-right ms-1"></i></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <!-- 2. Fitter -->
+                <div class="col-lg-4 col-md-6 trade-item" data-duration="2-year" data-name="fitter mechanical manufacturing railways">
+                    <div class="courses card h-100 shadow-sm" onclick="openTradeModal('Fitter')">
+                        <div class="trade-img-wrap">
+                            <img src="img/c2.jpg" alt="Fitter Trade"
+                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80';">
+                            <span class="trade-badge-duration"><i class="fa-regular fa-clock me-1"></i>2 Years</span>
+                            <span class="trade-badge-ncvt">NCVT / SCVT</span>
+                        </div>
+                        <div class="card-body details">
+                            <h6 class="card-title fw-bold">Fitter</h6>
+                            <p class="card-text text-muted small mb-3">
+                                <b>Fitter (2 Years)</b> – Core industrial and manufacturing trade with strong career and apprenticeship potential (including Indian Railways, BHEL, and Ordnance Factories).
+                            </p>
+                            <div class="trade-card-footer">
+                                <span><i class="fa-solid fa-user-check me-1 text-success"></i>Eligibility: 10th Pass</span>
+                                <span>View Scope <i class="fa-solid fa-arrow-right ms-1"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Electronic Mechanic -->
+                <div class="col-lg-4 col-md-6 trade-item" data-duration="2-year" data-name="electronic mechanic pcb circuit microcontroller">
+                    <div class="courses card h-100 shadow-sm" onclick="openTradeModal('Electronic Mechanic')">
+                        <div class="trade-img-wrap">
+                            <img src="img/c3.avif" alt="Electronic Mechanic Trade"
+                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80';">
+                            <span class="trade-badge-duration"><i class="fa-regular fa-clock me-1"></i>2 Years</span>
+                            <span class="trade-badge-ncvt">NCVT / SCVT</span>
+                        </div>
+                        <div class="card-body details">
+                            <h6 class="card-title fw-bold">Electronic Mech.</h6>
+                            <p class="card-text text-muted small mb-3">
+                                <b>Electronic Mechanic (2 Years)</b> – Trains students in analog and digital electronics, PCB circuit troubleshooting, communication equipment, and modern industrial sensors.
+                            </p>
+                            <div class="trade-card-footer">
+                                <span><i class="fa-solid fa-user-check me-1 text-success"></i>Eligibility: 10th Pass</span>
+                                <span>View Scope <i class="fa-solid fa-arrow-right ms-1"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. ICTSM -->
+                <div class="col-lg-4 col-md-6 trade-item" data-duration="2-year" data-name="information technology electronics system maintenance ictsm computer networking">
+                    <div class="courses card h-100 shadow-sm" onclick="openTradeModal('ICTSM')">
+                        <div class="trade-img-wrap">
+                            <img src="img/c4.jpeg" alt="ICTSM Trade"
+                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1597852074816-d933c7d2b988?auto=format&fit=crop&w=800&q=80';">
+                            <span class="trade-badge-duration"><i class="fa-regular fa-clock me-1"></i>2 Years</span>
+                            <span class="trade-badge-ncvt">NCVT / SCVT</span>
+                        </div>
+                        <div class="card-body details">
+                            <h6 class="card-title fw-bold">Information Technology and Electronics System Maintenance</h6>
+                            <p class="card-text text-muted small mb-3">
+                                <b>Information Technology and Electronics System Maintenance (ICTSM) (2 Years)</b> – Focuses on computer hardware, networking, servers, electronics, and IT system maintenance.
+                            </p>
+                            <div class="trade-card-footer">
+                                <span><i class="fa-solid fa-user-check me-1 text-success"></i>Eligibility: 10th Pass</span>
+                                <span>View Scope <i class="fa-solid fa-arrow-right ms-1"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Machinist -->
+                <div class="col-lg-4 col-md-6 trade-item" data-duration="2-year" data-name="machinist milling lathe cnc metal">
+                    <div class="courses card h-100 shadow-sm" onclick="openTradeModal('Machinist')">
+                        <div class="trade-img-wrap">
+                            <img src="img/c5.webp" alt="Machinist Trade"
+                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80';">
+                            <span class="trade-badge-duration"><i class="fa-regular fa-clock me-1"></i>2 Years</span>
+                            <span class="trade-badge-ncvt">NCVT / SCVT</span>
+                        </div>
+                        <div class="card-body details">
+                            <h6 class="card-title fw-bold">Machinist</h6>
+                            <p class="card-text text-muted small mb-3">
+                                <b>Machinist (2 Years)</b> – Specializes in operating milling, shaping, slotting, surface grinding, and CNC machines to produce precision industrial gears and components.
+                            </p>
+                            <div class="trade-card-footer">
+                                <span><i class="fa-solid fa-user-check me-1 text-success"></i>Eligibility: 10th Pass</span>
+                                <span>View Scope <i class="fa-solid fa-arrow-right ms-1"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Turner -->
+                <div class="col-lg-4 col-md-6 trade-item" data-duration="2-year" data-name="turner lathe precision metal cutting">
+                    <div class="courses card h-100 shadow-sm" onclick="openTradeModal('Turner')">
+                        <div class="trade-img-wrap">
+                            <img src="img/c6.jpg" alt="Turner Trade"
+                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1565439390118-092708f605f4?auto=format&fit=crop&w=800&q=80';">
+                            <span class="trade-badge-duration"><i class="fa-regular fa-clock me-1"></i>2 Years</span>
+                            <span class="trade-badge-ncvt">NCVT / SCVT</span>
+                        </div>
+                        <div class="card-body details">
+                            <h6 class="card-title fw-bold">Turner</h6>
+                            <p class="card-text text-muted small mb-3">
+                                <b>Turner (2 Years)</b> – Precision machine-shop trade essential for lathe operations, metal-cutting, thread cutting, and cylindrical component manufacturing.
+                            </p>
+                            <div class="trade-card-footer">
+                                <span><i class="fa-solid fa-user-check me-1 text-success"></i>Eligibility: 10th Pass</span>
+                                <span>View Scope <i class="fa-solid fa-arrow-right ms-1"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Wireman -->
+                <div class="col-lg-4 col-md-6 trade-item" data-duration="2-year" data-name="wireman electrical domestic commercial wiring">
+                    <div class="courses card h-100 shadow-sm" onclick="openTradeModal('Wireman')">
+                        <div class="trade-img-wrap">
+                            <img src="img/c7.jpeg" alt="Wireman Trade"
+                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=800&q=80';">
+                            <span class="trade-badge-duration"><i class="fa-regular fa-clock me-1"></i>2 Years</span>
+                            <span class="trade-badge-ncvt">NCVT / SCVT</span>
+                        </div>
+                        <div class="card-body details">
+                            <h6 class="card-title fw-bold">Wireman</h6>
+                            <p class="card-text text-muted small mb-3">
+                                <b>Wireman (2 Years)</b> – Covers domestic, commercial, and industrial electrical installation, panel board wiring, earthing systems, and safety maintenance.
+                            </p>
+                            <div class="trade-card-footer">
+                                <span><i class="fa-solid fa-user-check me-1 text-success"></i>Eligibility: 8th / 10th Pass</span>
+                                <span>View Scope <i class="fa-solid fa-arrow-right ms-1"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. Mechanic Motor Vehicle (MMV) -->
+                <div class="col-lg-4 col-md-6 trade-item" data-duration="2-year" data-name="mechanic motor vehicle mmv automobile car engine">
+                    <div class="courses card h-100 shadow-sm" onclick="openTradeModal('Mechanic Motor Vehicle')">
+                        <div class="trade-img-wrap">
+                            <img src="img/c8.jpg" alt="Mechanic Motor Vehicle Trade"
+                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=800&q=80';">
+                            <span class="trade-badge-duration"><i class="fa-regular fa-clock me-1"></i>2 Years</span>
+                            <span class="trade-badge-ncvt">NCVT / SCVT</span>
+                        </div>
+                        <div class="card-body details">
+                            <h6 class="card-title fw-bold">Mechanic Motor Vehicle</h6>
+                            <p class="card-text text-muted small mb-3">
+                                <b>Mechanic Motor Vehicle (MMV) (2 Years)</b> – Trains students in automobile engine overhaul, transmission repair, servicing, and modern electronic vehicle diagnostics.
+                            </p>
+                            <div class="trade-card-footer">
+                                <span><i class="fa-solid fa-user-check me-1 text-success"></i>Eligibility: 10th Pass</span>
+                                <span>View Scope <i class="fa-solid fa-arrow-right ms-1"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9. Welder -->
+                <div class="col-lg-4 col-md-6 trade-item" data-duration="1-year" data-name="welder welding fabrication arc gas tig mig">
+                    <div class="courses card h-100 shadow-sm" onclick="openTradeModal('Welder')">
+                        <div class="trade-img-wrap">
+                            <img src="img/c9.webp" alt="Welder Trade"
+                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=800&q=80';">
+                            <span class="trade-badge-duration"><i class="fa-regular fa-clock me-1"></i>1 Year</span>
+                            <span class="trade-badge-ncvt">NCVT / SCVT</span>
+                        </div>
+                        <div class="card-body details">
+                            <h6 class="card-title fw-bold">Welder</h6>
+                            <p class="card-text text-muted small mb-3">
+                                <b>Welder (1 Year)</b> – Short-duration engineering trade mastering Arc, Gas, MIG, and TIG welding with steady demand in heavy fabrication, railways, and construction.
+                            </p>
+                            <div class="trade-card-footer">
+                                <span><i class="fa-solid fa-user-check me-1 text-success"></i>Eligibility: 8th / 10th Pass</span>
+                                <span>View Scope <i class="fa-solid fa-arrow-right ms-1"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10. Mechanic Diesel -->
+                <div class="col-lg-4 col-md-6 trade-item" data-duration="1-year" data-name="mechanic diesel locomotive engine generator">
+                    <div class="courses card h-100 shadow-sm" onclick="openTradeModal('Mechanic Diesel')">
+                        <div class="trade-img-wrap">
+                            <img src="img/c10.jpeg" alt="Mechanic Diesel Trade"
+                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=800&q=80';">
+                            <span class="trade-badge-duration"><i class="fa-regular fa-clock me-1"></i>1 Year</span>
+                            <span class="trade-badge-ncvt">NCVT / SCVT</span>
+                        </div>
+                        <div class="card-body details">
+                            <h6 class="card-title fw-bold">Mechanic Diesel</h6>
+                            <p class="card-text text-muted small mb-3">
+                                <b>Mechanic Diesel (1 Year)</b> – Intensive training on heavy-duty diesel engines, fuel injection systems, locomotives, and industrial power generators.
+                            </p>
+                            <div class="trade-card-footer">
+                                <span><i class="fa-solid fa-user-check me-1 text-success"></i>Eligibility: 10th Pass</span>
+                                <span>View Scope <i class="fa-solid fa-arrow-right ms-1"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 11. FoundryMan -->
+                <div class="col-lg-4 col-md-6 trade-item" data-duration="1-year" data-name="foundryman metal casting moulding furnace">
+                    <div class="courses card h-100 shadow-sm" onclick="openTradeModal('FoundryMan')">
+                        <div class="trade-img-wrap">
+                            <img src="img/c11.jpg" alt="FoundryMan Trade"
+                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1535813547-99c456a41d4a?auto=format&fit=crop&w=800&q=80';">
+                            <span class="trade-badge-duration"><i class="fa-regular fa-clock me-1"></i>1 Year</span>
+                            <span class="trade-badge-ncvt">NCVT / SCVT</span>
+                        </div>
+                        <div class="card-body details">
+                            <h6 class="card-title fw-bold">FoundryMan</h6>
+                            <p class="card-text text-muted small mb-3">
+                                <b>FoundryMan (1 Year)</b> – Core metallurgical trade focusing on pattern making, sand moulding, furnace operation, and precision metal casting for heavy industries.
+                            </p>
+                            <div class="trade-card-footer">
+                                <span><i class="fa-solid fa-user-check me-1 text-success"></i>Eligibility: 10th Pass</span>
+                                <span>View Scope <i class="fa-solid fa-arrow-right ms-1"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 12. Plumber -->
+                <div class="col-lg-4 col-md-6 trade-item" data-duration="1-year" data-name="plumber piping sanitary water supply">
+                    <div class="courses card h-100 shadow-sm" onclick="openTradeModal('Plumber')">
+                        <div class="trade-img-wrap">
+                            <img src="img/c12.jpeg" alt="Plumber Trade"
+                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=800&q=80';">
+                            <span class="trade-badge-duration"><i class="fa-regular fa-clock me-1"></i>1 Year</span>
+                            <span class="trade-badge-ncvt">NCVT / SCVT</span>
+                        </div>
+                        <div class="card-body details">
+                            <h6 class="card-title fw-bold">Plumber</h6>
+                            <p class="card-text text-muted small mb-3">
+                                <b>Plumber (1 Year)</b> – High self-employment and municipal infrastructure utility scope covering water supply pipelines, drainage, and modern sanitary fittings.
+                            </p>
+                            <div class="trade-card-footer">
+                                <span><i class="fa-solid fa-user-check me-1 text-success"></i>Eligibility: 8th / 10th Pass</span>
+                                <span>View Scope <i class="fa-solid fa-arrow-right ms-1"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="col-md-4 col-sm-6">
-                <div class="courses card h-100 shadow-sm border-0">
-                    <img src="img/c3.avif" class="card-img-top object-fit-cover" alt="" style="height: 100%;">
-                    <div class="card-body details">
-                        <h6 class="card-title fw-bold">Electronic Mech.</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6">
-                <div class="courses card h-100 shadow-sm border-0">
-                    <img src="img/c4.jpeg" class="card-img-top object-fit-cover" alt="" style="height: 100%;">
-                    <div class="card-body details">
-                        <h6 class="card-title fw-bold">Information Technology and Electronics System Maintenance</h6>
-                        <p class="card-text text-muted small"><b>Information Technology and Electronics System Maintenance (ICTSM) (2 Years)</b> – Focuses on computer hardware, electronics, and system maintenance.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6">
-                <div class="courses card h-100 shadow-sm border-0">
-                    <img src="img/c5.webp" class="card-img-top object-fit-cover" alt="" style="height: 100%;">
-                    <div class="card-body details">
-                        <h6 class="card-title fw-bold">Machinist</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6">
-                <div class="courses card h-100 shadow-sm border-0">
-                    <img src="img/c6.jpg" class="card-img-top object-fit-cover" alt="" style="height: 100%;">
-                    <div class="card-body details">
-                        <h6 class="card-title fw-bold">Turner</h6>
-                        <p class="card-text text-muted small"><b>Turner (2 Years) </b>– Precision machine-shop trade essential for metal-cutting and component manufacturing.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6">
-                <div class="courses card h-100 shadow-sm border-0">
-                    <img src="img/c7.jpeg" class="card-img-top object-fit-cover" alt="" style="height: 100%;">
-                    <div class="card-body details">
-                        <h6 class="card-title fw-bold">Wireman</h6>
-                        <p class="card-text text-muted small"><b>Wireman (2 Years)</b> – Covers domestic and commercial electrical installation and wiring work.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6">
-                <div class="courses card h-100 shadow-sm border-0">
-                    <img src="img/c8.jpg" class="card-img-top object-fit-cover" alt="" style="height: 100%;">
-                    <div class="card-body details">
-                        <h6 class="card-title fw-bold">Mechanic Motor Vehicle</h6>
-                        <p class="card-text text-muted small"><b>Mechanic Motor Vehicle (MMV) (2 Years) </b>– Trains students in automobile repair, servicing, and modern vehicle systems.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6">
-                <div class="courses card h-100 shadow-sm border-0">
-                    <img src="img/c9.webp" class="card-img-top object-fit-cover" alt="" style="height: 100%;">
-                    <div class="card-body details">
-                        <h6 class="card-title fw-bold">Welder</h6>
-                        <p class="card-text text-muted small"><b>Welder (1 Year)</b> – Short-duration engineering trade with steady demand in fabrication and construction</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6">
-                <div class="courses card h-100 shadow-sm border-0">
-                    <img src="img/c10.jpeg" class="card-img-top object-fit-cover" alt="" style="height: 100%;">
-                    <div class="card-body details">
-                        <h6 class="card-title fw-bold">Mechanic Diesel</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6">
-                <div class="courses card h-100 shadow-sm border-0">
-                    <img src="img/c11.jpg" class="card-img-top object-fit-cover" alt="" style="height: 100%;">
-                    <div class="card-body details">
-                        <h6 class="card-title fw-bold">FoundryMan</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6">
-                <div class="courses card h-100 shadow-sm border-0">
-                    <img src="img/c12.jpeg" class="card-img-top object-fit-cover" alt="" style="height: 100%;">
-                    <div class="card-body details">
-                        <h6 class="card-title fw-bold">Plumber</h6>
-                        <p class="card-text text-muted small"><b>Plumber (1 Year)</b> – High self-employment and infrastructure utility scope.</p>
-                    </div>
-                </div>
+            <!-- Empty search state message -->
+            <div id="noTradesMessage" class="text-center py-5 d-none">
+                <i class="fa-solid fa-magnifying-glass fa-2x text-muted mb-2"></i>
+                <h5 class="fw-bold">No matching trade found</h5>
+                <p class="text-muted small">Try clearing your search or selecting "All Trades (12)".</p>
             </div>
         </div>
     </section>
-    <!-- Courses section ends from here -->
 
+    <!-- Registration / Query & Live Campus Clock Section (#registration) -->
+    <div class="container my-5 py-2">
+        <section id="registration">
+            <div class="row g-4 align-items-stretch">
+                <!-- Left Column: Live Digital Clock & Institute Desk Info -->
+                <div class="col-lg-5 reminder">
+                    <div class="reminder-card d-flex flex-column justify-content-between">
+                        <div>
+                            <span class="badge bg-warning text-dark fw-bold mb-2 px-3 py-1 rounded-pill">
+                                <i class="fa-solid fa-tower-broadcast me-1"></i> Live Campus Desk
+                            </span>
+                            <h2 class="h3 fw-bold mb-1" style="font-family: 'Noto Sans Devanagari', sans-serif;">
+                                राजकीय औद्योगिक प्रशिक्षण संस्थान
+                            </h2>
+                            <p class="text-white-50 mb-4">Katihar, Bihar • For Any Admission or Trade Query</p>
 
-    <!-- Registration section starts from here -->
-    <section id="registration" class="container py-5">
-        <div class="row g-4 align-items-center p-1">
-            <div class="col-lg-6 reminder p-4 border rounded bg-white shadow-sm">
-                <h1 class="h3 fw-bold">राजकीय औद्योगिक प्रशिक्षण संस्थान</h1>
-                <h3 class="h5 text-muted mb-4">For Any Query</h3>
+                            <!-- 12 hr / 24 hr Format Toggle -->
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <span class="small text-white-50 fw-semibold">Time Format:</span>
+                                <div class="toggle btn-group" role="group" aria-label="Clock Format Toggle">
+                                    <button type="button" class="btn btn-sm btn-outline-light activeToggle px-3" id="btn-12">12 hr</button>
+                                    <button type="button" class="btn btn-sm btn-outline-light px-3" id="btn-24">24 hr</button>
+                                </div>
+                            </div>
 
-                <div class="header mb-3">
-                    <div class="toggle btn-group" role="group">
-                        <div class="btn btn-outline-secondary activeToggle" id="btn-12">12 hr</div>
-                        <div class="btn btn-outline-secondary" id="btn-24">24 hr</div>
+                            <!-- Digital Clock Display -->
+                            <div class="display clock-display-box mb-4">
+                                <div class="time-wrap d-flex align-items-baseline justify-content-center gap-2">
+                                    <div class="time fw-bold mb-0" id="time">00:00:00</div>
+                                    <div class="ampm" id="ampm">AM</div>
+                                </div>
+                                <hr class="border-secondary my-2 opacity-25">
+                                <div class="meta d-flex justify-content-between align-items-center small text-light">
+                                    <div id="date"><i class="fa-regular fa-calendar me-1 text-warning"></i>January 1, 2026</div>
+                                    <div id="day" class="fw-semibold text-warning">Monday</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Campus Working Hours & Admission Info -->
+                        <div class="p-3 rounded-3" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);">
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <i class="fa-solid fa-clock text-warning"></i>
+                                <span class="fw-semibold small">Office Hours: Mon – Sat (10:00 AM – 5:00 PM)</span>
+                            </div>
+                            <p class="small text-white-50 mb-0">
+                                Admissions to Govt. ITI Katihar are conducted annually through the <strong>BCECEB (ITICAT)</strong> entrance examination counseling process.
+                            </p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="display p-1 bg-light rounded">
-                    <div class="time-wrap d-flex align-items-baseline gap-2">
-                        <div class="time h2 fw-bold mb-0" id="time">00:00:00</div>
-                        <div class="ampm text-muted" id="ampm">AM</div>
-                    </div>
-                    <div class="meta text-muted mt-2">
-                        <div id="date">January 1, 2025</div>
-                        <div id="day">Monday</div>
+                <!-- Right Column: Interactive Student Query Form -->
+                <div class="col-lg-7 form">
+                    <div class="query-form-card">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div>
+                                <h3 class="h4 fw-bold mb-1 text-dark">Send Any Query!</h3>
+                                <p class="text-muted small mb-0">Have questions about trades, eligibility, or documents? Write to us below.</p>
+                            </div>
+                            <div class="d-none d-sm-flex align-items-center justify-content-center rounded-circle bg-primary bg-opacity-10 text-primary" style="width: 48px; height: 48px;">
+                                <i class="fa-solid fa-envelope-open-text fa-lg"></i>
+                            </div>
+                        </div>
+
+                        <!-- Inline Feedback Message Box (No alert() used) -->
+                        <div id="queryFeedbackBox" class="alert d-none rounded-3 small py-2 px-3 mb-3" role="alert"></div>
+
+                        <form id="itiQueryForm" novalidate>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="studentName" class="form-label small fw-semibold text-secondary mb-1">Full Name <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" placeholder="Enter your full name" id="studentName" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="studentPhone" class="form-label small fw-semibold text-secondary mb-1">Contact Number <span class="text-danger">*</span></label>
+                                    <input type="tel" class="form-control" placeholder="10-digit mobile number" id="studentPhone" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="studentEmail" class="form-label small fw-semibold text-secondary mb-1">Email ID <span class="text-danger">*</span></label>
+                                    <input type="email" class="form-control" placeholder="you@example.com" id="studentEmail" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="studentTrade" class="form-label small fw-semibold text-secondary mb-1">Trade of Interest</label>
+                                    <select class="form-select" id="studentTrade">
+                                        <option value="General Admission Query">General Admission / ITICAT Query</option>
+                                        <option value="Electrician (2 Years)">Electrician (2 Years)</option>
+                                        <option value="Fitter (2 Years)">Fitter (2 Years)</option>
+                                        <option value="Electronic Mechanic (2 Years)">Electronic Mechanic (2 Years)</option>
+                                        <option value="ICTSM (2 Years)">ICTSM (2 Years)</option>
+                                        <option value="Machinist (2 Years)">Machinist (2 Years)</option>
+                                        <option value="Turner (2 Years)">Turner (2 Years)</option>
+                                        <option value="Wireman (2 Years)">Wireman (2 Years)</option>
+                                        <option value="Mechanic Motor Vehicle (2 Years)">Mechanic Motor Vehicle (2 Years)</option>
+                                        <option value="Welder (1 Year)">Welder (1 Year)</option>
+                                        <option value="Mechanic Diesel (1 Year)">Mechanic Diesel (1 Year)</option>
+                                        <option value="FoundryMan (1 Year)">FoundryMan (1 Year)</option>
+                                        <option value="Plumber (1 Year)">Plumber (1 Year)</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="studentMessage" class="form-label small fw-semibold text-secondary mb-1">Your Query / Message</label>
+                                    <textarea class="form-control" id="studentMessage" rows="2" placeholder="Ask about admission dates, hostel, trade syllabus, or placement..."></textarea>
+                                </div>
+                                <div class="col-12 pt-1">
+                                    <button type="submit" class="btn btn-warning yellow w-100">
+                                        <i class="fa-solid fa-paper-plane me-2"></i>Submit Inquiry to Helpdesk
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
+        </section>
+    </div>
 
-            <div class="col-lg-6 form p-4 border rounded bg-white shadow-sm">
-                <h3 class="h4 fw-bold mb-3">Send Any Query!</h3>
-
-                <div class="mb-3">
-                    <input type="text" class="form-control" placeholder="Name" id="">
-                </div>
-                <div class="mb-3">
-                    <input type="email" class="form-control" placeholder="Email ID" id="">
-                </div>
-                <div class="mb-3">
-                    <input type="text" class="form-control" placeholder="Contact Number" id="">
-                </div>
-
-                <div class="btn p-0">
-                    <a href="#" class="btn btn-warning yellow px-4">Contact</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Registration section ends from here -->
-
-
-    <!-- Experts section starts from here -->
+    <!-- Leadership / Principal Section (#experts) -->
     <section id="experts" class="container py-5 text-center">
-        <h1 class="fw-bold">OUR INSTRUCTOR</h1>
-        <p class="text-muted mb-5">Replenish man have thing gathering lights yielding shall you</p>
-        
+        <span class="section-badge">Institute Leadership</span>
+        <h1 class="section-heading display-6">OUR PRINCIPAL &amp; MENTOR</h1>
+        <p class="text-muted mx-auto mb-5" style="max-width: 650px;">
+            Dedicated leadership committed to strengthening industrial training, workshop excellence, and youth employability in Katihar, Bihar.
+        </p>
+
         <div class="row justify-content-center expert-box">
-            <div class="col-md-4">
-                <div class="profile card p-4 border shadow-sm">
-                    <img src="img/ITI.png" class="rounded-circle mx-auto mb-3" alt="" style="width: 100px; height: 100px; object-fit: cover;">
-                    <h6 class="fw-bold mb-1">Rakesh Kumar</h6>
-                    <p class="text-muted small mb-3">Principle ITI Katihar</p>
-                    <div class="pro-links d-flex justify-content-center gap-3 text-primary">
-                        <i class="fab fa-facebook fa-lg"></i>
-                        <i class="fab fa-instagram fa-lg"></i>
-                        <i class="fab fa-linkedin-in fa-lg"></i>
+            <div class="col-lg-8 col-md-10">
+                <div class="profile principal-card p-4 p-md-5 text-center text-md-start">
+                    <div class="row align-items-center g-4">
+                        <div class="col-md-4 text-center">
+                            <div class="principal-avatar-wrap mb-2">
+                                <img src="img/ITI.png" class="principal-avatar" alt="Rakesh Kumar - Principal ITI Katihar"
+                                     onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 120 120%22><rect width=%22120%22 height=%22120%22 fill=%22%230a1931%22/><circle cx=%2260%22 cy=%2245%22 r=%2222%22 fill=%22%23f59e0b%22/><path d=%22M22 108 C22 78 98 78 98 108%22 fill=%22%23f59e0b%22/></svg>';">
+                            </div>
+                            <h5 class="fw-bold mb-0 text-dark mt-2">Rakesh Kumar</h5>
+                            <p class="text-primary fw-semibold small mb-2">Principal, Govt. ITI Katihar</p>
+                            <div class="pro-links d-flex justify-content-center gap-2 mt-2">
+                                <a href="#registration" title="Connect on Facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#registration" title="Connect on Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="#registration" title="Connect on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-8 border-start-md ps-md-4">
+                            <div class="mb-2 text-warning">
+                                <i class="fa-solid fa-quote-left fa-2x opacity-50"></i>
+                            </div>
+                            <h5 class="fw-bold text-dark mb-2">Message from the Principal's Desk</h5>
+                            <p class="text-muted small mb-3" style="line-height: 1.75;">
+                                "At Government Industrial Training Institute (ITI) Katihar, our mission is to empower the youth of Bihar with practical, industry-relevant technical skills. Through disciplined workshop training, NCVT-aligned curriculum, and active industry-institute partnerships, we prepare every trainee to excel in public sector enterprises, Indian Railways, private manufacturing, and self-reliance."
+                            </p>
+                            <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-2">
+                                <span class="badge bg-light text-dark border px-3 py-2"><i class="fa-solid fa-check-circle text-success me-1"></i>Skill India Mission</span>
+                                <span class="badge bg-light text-dark border px-3 py-2"><i class="fa-solid fa-check-circle text-success me-1"></i>75%+ Practical Lab Focus</span>
+                                <span class="badge bg-light text-dark border px-3 py-2"><i class="fa-solid fa-check-circle text-success me-1"></i>Apprenticeship Support</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Experts section ends from here -->
 
-    <!-- Footer section starts from here -->
-    <div id="content-footer"></div>
-    <!-- Footer section ends from here -->
+    <!-- Trade Details Modal (Opened when clicking any Trade card) -->
+    <div class="modal fade" id="tradeDetailModal" tabindex="-1" aria-labelledby="tradeModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+                <div class="modal-header text-white border-0 py-3 px-4" style="background: linear-gradient(135deg, #0a1931 0%, #153e75 100%);">
+                    <div>
+                        <span class="badge bg-warning text-dark mb-1" id="tradeModalDuration">2 Years</span>
+                        <h5 class="modal-title fw-bold mb-0" id="tradeModalTitle">Trade Title</h5>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p class="text-muted small mb-3" id="tradeModalDesc"></p>
+                    <div class="p-3 bg-light rounded-3 border mb-3">
+                        <div class="row g-2 small">
+                            <div class="col-6">
+                                <span class="text-muted d-block">Affiliation:</span>
+                                <strong class="text-dark">NCVT / SCVT Govt. Approved</strong>
+                            </div>
+                            <div class="col-6">
+                                <span class="text-muted d-block">Min. Eligibility:</span>
+                                <strong class="text-dark" id="tradeModalEligibility">10th Pass (Matric)</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <h6 class="fw-bold small text-uppercase text-primary mb-2">
+                        <i class="fa-solid fa-briefcase me-1"></i>Career &amp; Placement Scope:
+                    </h6>
+                    <p class="small text-secondary mb-0" id="tradeModalScope"></p>
+                </div>
+                <div class="modal-footer bg-light border-0 px-4 py-3 d-flex justify-content-between">
+                    <button type="button" class="btn btn-outline-secondary btn-sm rounded-pill px-3" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-warning btn-sm fw-bold rounded-pill px-4" id="modalInquireBtn">
+                        Inquire About This Trade <i class="fa-solid fa-arrow-right ms-1"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <!-- Bootstrap 5 JS Bundle CDN -->
+    <!-- Complete Institutional Footer (#content-footer) -->
+    <div id="content-footer">
+        <footer class="iti-footer pt-5 pb-4">
+            <div class="container">
+                <div class="row g-4 mb-4">
+                    <!-- Col 1: About Institute -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <i class="fa-solid fa-gears fa-2x text-warning"></i>
+                            <div>
+                                <h6 class="text-white fw-bold mb-0">GOVT. ITI KATIHAR</h6>
+                                <small class="text-warning">राजकीय औद्योगिक प्रशिक्षण संस्थान, कटिहार</small>
+                            </div>
+                        </div>
+                        <p class="small text-secondary mb-3" style="line-height: 1.7;">
+                            Operated under the Department of Labour Resources, Government of Bihar (श्रम संसाधन विभाग, बिहार सरकार). Dedicated to imparting high-quality vocational and industrial training to empower youth with sustainable livelihoods.
+                        </p>
+                        <div class="d-flex gap-2">
+                            <span class="badge bg-dark border border-secondary text-light">DGT India</span>
+                            <span class="badge bg-dark border border-secondary text-light">NCVT MIS</span>
+                            <span class="badge bg-dark border border-secondary text-light">BCECEB</span>
+                        </div>
+                    </div>
+
+                    <!-- Col 2: Quick Navigation -->
+                    <div class="col-lg-2 col-md-6">
+                        <h5>Quick Links</h5>
+                        <ul class="footer-links">
+                            <li><a href="#home"><i class="fa-solid fa-angle-right text-warning"></i> Home</a></li>
+                            <li><a href="#features"><i class="fa-solid fa-angle-right text-warning"></i> Institute Features</a></li>
+                            <li><a href="#course"><i class="fa-solid fa-angle-right text-warning"></i> All 12 Trades</a></li>
+                            <li><a href="#registration"><i class="fa-solid fa-angle-right text-warning"></i> Online Query Desk</a></li>
+                            <li><a href="#experts"><i class="fa-solid fa-angle-right text-warning"></i> Principal's Desk</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Col 3: Popular Trades -->
+                    <div class="col-lg-3 col-md-6">
+                        <h5>Key Technical Trades</h5>
+                        <ul class="footer-links">
+                            <li><a href="#course" onclick="openTradeModal('Electrician')"><i class="fa-solid fa-bolt text-warning"></i> Electrician &amp; Wireman</a></li>
+                            <li><a href="#course" onclick="openTradeModal('Fitter')"><i class="fa-solid fa-wrench text-warning"></i> Fitter &amp; Turner</a></li>
+                            <li><a href="#course" onclick="openTradeModal('ICTSM')"><i class="fa-solid fa-computer text-warning"></i> ICTSM &amp; Electronic Mech.</a></li>
+                            <li><a href="#course" onclick="openTradeModal('Mechanic Motor Vehicle')"><i class="fa-solid fa-car-side text-warning"></i> MMV &amp; Mechanic Diesel</a></li>
+                            <li><a href="#course" onclick="openTradeModal('Welder')"><i class="fa-solid fa-fire-flame-curved text-warning"></i> Welder, Plumber &amp; Foundry</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Col 4: Contact Information -->
+                    <div class="col-lg-3 col-md-6">
+                        <h5>Contact Us</h5>
+                        <ul class="list-unstyled small text-secondary mb-0">
+                            <li class="d-flex align-items-start gap-2 mb-2">
+                                <i class="fa-solid fa-location-dot text-warning mt-1"></i>
+                                <span>Govt. Industrial Training Institute (ITI), Katihar, Bihar – 854105, India</span>
+                            </li>
+                            <li class="d-flex align-items-center gap-2 mb-2">
+                                <i class="fa-solid fa-building-flag text-warning"></i>
+                                <span>Dept. of Labour Resources, Govt. of Bihar</span>
+                            </li>
+                            <li class="d-flex align-items-center gap-2 mb-2">
+                                <i class="fa-solid fa-clock text-warning"></i>
+                                <span>Mon – Sat: 10:00 AM to 05:00 PM</span>
+                            </li>
+                            <li class="d-flex align-items-center gap-2">
+                                <i class="fa-solid fa-envelope text-warning"></i>
+                                <span>itikatihar-bih@nic.in / Query Desk</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr class="border-secondary opacity-25">
+
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-center small text-secondary pt-2">
+                    <div>
+                        &copy; <span id="currentYear">2026</span> <strong>GOVT. ITI KATIHAR (राजकीय औद्योगिक प्रशिक्षण संस्थान - कटिहार)</strong>. All Rights Reserved.
+                    </div>
+                    <div class="mt-2 mt-md-0">
+                        Designed for Skill Development &amp; Technical Education, Bihar
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Floating Back-to-Top Button -->
+    <button id="backToTop" title="Back to Top" aria-label="Back to Top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap 5.3.3 JS Bundle CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
+    <!-- Application Scripts -->
     <script>
-        // Show menu links on burger click (Kept your custom classes intact for style.css compatibility)
-        $('#menu-btn').click(function(){
-            $('nav .navigation ul').addClass('active')
+        // 1. Preserve original mobile menu class toggle & auto-close Bootstrap collapse on nav-link click
+        $('#menu-btn').click(function() {
+            $('nav .navigation ul').addClass('active');
         });
 
-        // Hide navbar on click function
-        $('#menu-close').click(function(){
-            $('nav .navigation ul').removeClass('active')
+        $('#menu-close').click(function() {
+            $('nav .navigation ul').removeClass('active');
         });
-    </script>
-    <script>
-         fetch('footer/footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('content-footer').innerHTML = data;
+
+        document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const navbarCollapse = document.getElementById('navbarNav');
+                if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                    const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+                    if (bsCollapse) bsCollapse.hide();
+                }
+            });
+        });
+
+        // 2. Safe external footer fetch (only replaces default built-in footer if a valid local footer/footer.html exists)
+        fetch('footer/footer.html')
+            .then(response => {
+                if (!response.ok) throw new Error('Using built-in institutional footer');
+                return response.text();
             })
-            .catch(error => console.error('Error loading HTML:', error));
-    </script>
-    <script>
-        const btn_12 = document.getElementById("btn-12")
-        const btn_24 = document.getElementById("btn-24")
-        const time = document.getElementById("time")
-        const ampm = document.getElementById("ampm")
-        const date = document.getElementById("date")
-        const day = document.getElementById("day")
+            .then(data => {
+                if (data && data.trim().length > 40 && !data.includes('<!DOCTYPE html>')) {
+                    document.getElementById('content-footer').innerHTML = data;
+                }
+            })
+            .catch(() => {
+                // Gracefully retain the complete built-in footer
+            });
+
+        // 3. Real-Time Campus Clock (12hr / 24hr toggle, initialized immediately on page load)
+        const btn_12 = document.getElementById("btn-12");
+        const btn_24 = document.getElementById("btn-24");
+        const time = document.getElementById("time");
+        const ampm = document.getElementById("ampm");
+        const date = document.getElementById("date");
+        const day = document.getElementById("day");
 
         let hour12 = true;
 
         function pad(n) {
-            return String(n).padStart(2, "0")
+            return String(n).padStart(2, "0");
         }
 
         const clock = () => {
-            const now = new Date()
+            const now = new Date();
 
-            let h = now.getHours()
-            let m = now.getMinutes()
-            let s = now.getSeconds()
+            let h = now.getHours();
+            let m = now.getMinutes();
+            let s = now.getSeconds();
 
             let AmPm = "";
 
@@ -381,35 +1603,298 @@
 
             time.textContent = `${pad(h)}:${pad(m)}:${pad(s)}`;
             ampm.textContent = AmPm;
-            ampm.style.display = hour12 ? "block" : "none"
+            ampm.style.display = hour12 ? "block" : "none";
 
             let nowDate = now.toLocaleDateString("en-US", {
                 day: "numeric",
                 month: "long",
                 year: "numeric"
-            })
+            });
 
             let nowDay = now.toLocaleDateString("en-US", {
                 weekday: "long"
-            })
+            });
 
-            date.textContent = nowDate;
+            date.innerHTML = `<i class="fa-regular fa-calendar me-1 text-warning"></i>${nowDate}`;
             day.textContent = nowDay;
-        }
+        };
 
         btn_12.addEventListener("click", () => {
             hour12 = true;
             btn_12.classList.add("activeToggle");
             btn_24.classList.remove("activeToggle");
-        })
+            clock();
+        });
 
         btn_24.addEventListener("click", () => {
             hour12 = false;
             btn_12.classList.remove("activeToggle");
             btn_24.classList.add("activeToggle");
-        })
+            clock();
+        });
 
-        setInterval(clock, 1000)
+        // Run immediately so clock never shows 00:00:00 on initial load
+        clock();
+        setInterval(clock, 1000);
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // 4. Trade Filter Pills & Live Search
+        const filterBtns = document.querySelectorAll('#tradeFilterGroup .filter-btn');
+        const tradeItems = document.querySelectorAll('.trade-item');
+        const searchInput = document.getElementById('tradeSearchInput');
+        const noTradesMessage = document.getElementById('noTradesMessage');
+
+        let activeFilter = 'all';
+
+        function filterTrades() {
+            const query = searchInput.value.toLowerCase().trim();
+            let visibleCount = 0;
+
+            tradeItems.forEach(item => {
+                const duration = item.getAttribute('data-duration');
+                const keywords = item.getAttribute('data-name') + ' ' + item.innerText.toLowerCase();
+
+                const matchesDuration = (activeFilter === 'all') || (duration === activeFilter);
+                const matchesSearch = !query || keywords.includes(query);
+
+                if (matchesDuration && matchesSearch) {
+                    item.classList.remove('d-none');
+                    visibleCount++;
+                } else {
+                    item.classList.add('d-none');
+                }
+            });
+
+            noTradesMessage.classList.toggle('d-none', visibleCount > 0);
+        }
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                activeFilter = btn.getAttribute('data-filter');
+                filterTrades();
+            });
+        });
+
+        searchInput.addEventListener('input', filterTrades);
+
+        // 5. Trade Details Modal Data & Handler
+        const tradeDetailsData = {
+            'Electrician': {
+                title: 'Electrician (इलेक्ट्रीशियन)',
+                duration: '2 Years (4 Semesters / Annual Pattern)',
+                eligibility: '10th Pass (with Science & Mathematics)',
+                desc: 'Comprehensive engineering trade covering domestic & industrial wiring, AC/DC motors, transformers, switchgear, power generation, and electrical safety standards.',
+                scope: 'High recruitment in Indian Railways (ALP/Technician), Bihar State Power Holding Company (BSPHCL), NTPC, BHEL, DRDO, and licensed electrical contracting.'
+            },
+            'Fitter': {
+                title: 'Fitter (फिटर)',
+                duration: '2 Years',
+                eligibility: '10th Pass (with Science & Mathematics)',
+                desc: 'Core mechanical engineering trade focusing on fitting, assembling, structural fabrication, bench work, precision measurement instruments (Vernier, Micrometer), and machine maintenance.',
+                scope: 'Extensive opportunities in Indian Railways, Ordnance Factories, IOCL, ONGC, heavy manufacturing plants, and shipyard industries.'
+            },
+            'Electronic Mechanic': {
+                title: 'Electronic Mechanic (इलेक्ट्रॉनिक मैकेनिक)',
+                duration: '2 Years',
+                eligibility: '10th Pass',
+                desc: 'Focuses on assembling, testing, and repairing electronic equipment, microcontrollers, LED/LCD systems, solar inverters, communication devices, and industrial automation.',
+                scope: 'Careers in ISRO, DRDO, BEL, DMRC/Metro Rail, consumer electronics manufacturing, and instrumentation servicing.'
+            },
+            'ICTSM': {
+                title: 'Information Technology & Electronics System Maintenance (ICTSM)',
+                duration: '2 Years',
+                eligibility: '10th Pass',
+                desc: 'Modern IT & hardware trade training students in PC assembly, OS installation, LAN/WAN networking, server administration, printer/UPS repair, and cybersecurity basics.',
+                scope: 'IT Support Engineer, Network Technician, Hardware Specialist in government departments, banks, corporate offices, and IT service firms.'
+            },
+            'Machinist': {
+                title: 'Machinist (मशीनिस्ट)',
+                duration: '2 Years',
+                eligibility: '10th Pass',
+                desc: 'Hands-on mastery of heavy machine tools including Milling, Shaping, Planing, Slotting, Precision Grinding, and CNC (Computer Numerical Control) programming.',
+                scope: 'High demand in automobile OEM plants (Tata Motors, Maruti, Mahindra), tool rooms, defense production, and aerospace component manufacturing.'
+            },
+            'Turner': {
+                title: 'Turner (टर्नर)',
+                duration: '2 Years',
+                eligibility: '10th Pass',
+                desc: 'Specialized metal-turning trade using conventional and CNC Lathe machines to manufacture shafts, gears, bolts, tapers, and precision engineering parts from engineering drawings.',
+                scope: 'Strong absorption in Railway Workshops, HAL, BHEL, heavy engineering workshops, and precision machine shops.'
+            },
+            'Wireman': {
+                title: 'Wireman (वायरमैन)',
+                duration: '2 Years',
+                eligibility: '8th / 10th Pass',
+                desc: 'Practical training in residential, commercial, and multi-storey electrical conduit wiring, distribution boards, underground cabling, and earthing installations.',
+                scope: 'Public Works Department (PWD), state electricity boards, real estate infrastructure projects, and independent electrical contracting.'
+            },
+            'Mechanic Motor Vehicle': {
+                title: 'Mechanic Motor Vehicle - MMV (मैकेनिक मोटर व्हीकल)',
+                duration: '2 Years',
+                eligibility: '10th Pass',
+                desc: 'Complete automobile engineering program covering petrol/diesel engines, gearbox, braking, steering, suspension, emission control, and OBD scanner diagnostics.',
+                scope: 'State Road Transport Corporations, major automobile service centers, fleet management companies, and own multi-brand garage setup.'
+            },
+            'Welder': {
+                title: 'Welder (वेल्डर)',
+                duration: '1 Year',
+                eligibility: '8th / 10th Pass',
+                desc: 'Intensive 1-year trade teaching Shielded Metal Arc Welding (SMAW), Gas Welding, MIG/MAG, TIG welding, plasma cutting, and structural weld inspection.',
+                scope: 'Immediate employment in railway coach factories, bridge construction, oil & gas pipelines, shipyards, and overseas fabrication projects.'
+            },
+            'Mechanic Diesel': {
+                title: 'Mechanic Diesel (मैकेनिक डीजल)',
+                duration: '1 Year',
+                eligibility: '10th Pass',
+                desc: 'Focused 1-year engineering trade covering heavy diesel engines, CRDI fuel systems, turbochargers, stationary DG sets, tractors, and marine/locomotive diesel units.',
+                scope: 'Indian Railways (Diesel Sheds), mining & earthmoving companies, logistics fleets, and power backup service companies.'
+            },
+            'FoundryMan': {
+                title: 'FoundryMan (फाउंड्रीमैन)',
+                duration: '1 Year',
+                eligibility: '10th Pass',
+                desc: 'Metallurgical and casting trade imparting skills in sand preparation, mould & core making, cupola/induction furnace melting, and metal pouring & finishing.',
+                scope: 'Steel plants (SAIL, Tata Steel), automotive engine block foundries, heavy engineering corporations, and metal casting units.'
+            },
+            'Plumber': {
+                title: 'Plumber (प्लंबर)',
+                duration: '1 Year',
+                eligibility: '8th / 10th Pass',
+                desc: 'Practical 1-year trade covering GI/PVC/CPVC/PPR pipe fitting, water treatment & supply lines, solar water heaters, drainage systems, and modern sanitaryware installation.',
+                scope: 'PHED (Public Health Engineering Dept), Smart City infrastructure projects, hospitality sector maintenance, and lucrative self-employment.'
+            }
+        };
+
+        let currentModalTrade = 'General Admission Query';
+
+        window.openTradeModal = function(tradeKey) {
+            const info = tradeDetailsData[tradeKey] || tradeDetailsData['Electrician'];
+            currentModalTrade = info.title;
+
+            document.getElementById('tradeModalTitle').textContent = info.title;
+            document.getElementById('tradeModalDuration').textContent = info.duration;
+            document.getElementById('tradeModalEligibility').textContent = info.eligibility;
+            document.getElementById('tradeModalDesc').textContent = info.desc;
+            document.getElementById('tradeModalScope').textContent = info.scope;
+
+            const modalEl = document.getElementById('tradeDetailModal');
+            const modalInstance = bootstrap.Modal.getOrCreateInstance(modalEl);
+            modalInstance.show();
+        };
+
+        document.getElementById('modalInquireBtn').addEventListener('click', () => {
+            const modalEl = document.getElementById('tradeDetailModal');
+            const modalInstance = bootstrap.Modal.getInstance(modalEl);
+            if (modalInstance) modalInstance.hide();
+
+            const selectEl = document.getElementById('studentTrade');
+            for (let i = 0; i < selectEl.options.length; i++) {
+                if (currentModalTrade.toLowerCase().includes(selectEl.options[i].value.split(' (')[0].toLowerCase())) {
+                    selectEl.selectedIndex = i;
+                    break;
+                }
+            }
+
+            document.getElementById('registration').scrollIntoView({ behavior: 'smooth' });
+            setTimeout(() => document.getElementById('studentName').focus(), 600);
+        });
+
+        // 6. Query Form Validation & Submission Handler (Uses inline message box instead of alert())
+        const queryForm = document.getElementById('itiQueryForm');
+        const feedbackBox = document.getElementById('queryFeedbackBox');
+
+        queryForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('studentName').value.trim();
+            const phone = document.getElementById('studentPhone').value.trim();
+            const email = document.getElementById('studentEmail').value.trim();
+            const trade = document.getElementById('studentTrade').value;
+
+            if (!name || !phone || !email) {
+                feedbackBox.className = 'alert alert-danger rounded-3 small py-2 px-3 mb-3';
+                feedbackBox.innerHTML = '<i class="fa-solid fa-circle-exclamation me-2"></i>Please fill in your Name, Contact Number, and Email ID.';
+                return;
+            }
+
+            feedbackBox.className = 'alert alert-success rounded-3 small py-2 px-3 mb-3';
+            feedbackBox.innerHTML = `<i class="fa-solid fa-circle-check me-2"></i><strong>Thank you, ${name}!</strong> Your inquiry regarding <em>${trade}</em> has been recorded at the Govt. ITI Katihar Helpdesk. We will contact you on ${phone}.`;
+            queryForm.reset();
+        });
+
+        // 7. Back-to-Top Button Visibility & Action
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 350) {
+                backToTopBtn.style.display = 'flex';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
+        });
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // 8. Hero Animated Technical Particle & Constellation Canvas
+        window.addEventListener('load', function() {
+            const canvas = document.getElementById('heroCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let width, height, particles;
+
+            function initCanvas() {
+                width = canvas.width = canvas.parentElement.offsetWidth;
+                height = canvas.height = canvas.parentElement.offsetHeight;
+                const count = Math.min(55, Math.floor((width * height) / 18000));
+                particles = [];
+                for (let i = 0; i < count; i++) {
+                    particles.push({
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        vx: (Math.random() - 0.5) * 0.6,
+                        vy: (Math.random() - 0.5) * 0.6,
+                        r: Math.random() * 2 + 1
+                    });
+                }
+            }
+
+            function animateParticles() {
+                ctx.clearRect(0, 0, width, height);
+                for (let i = 0; i < particles.length; i++) {
+                    const p = particles[i];
+                    p.x += p.vx;
+                    p.y += p.vy;
+
+                    if (p.x < 0 || p.x > width) p.vx *= -1;
+                    if (p.y < 0 || p.y > height) p.vy *= -1;
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(245, 158, 11, 0.55)';
+                    ctx.fill();
+
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const p2 = particles[j];
+                        const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+                        if (dist < 130) {
+                            ctx.beginPath();
+                            ctx.moveTo(p.x, p.y);
+                            ctx.lineTo(p2.x, p2.y);
+                            ctx.strokeStyle = `rgba(148, 163, 184, ${0.18 * (1 - dist / 130)})`;
+                            ctx.lineWidth = 1;
+                            ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(animateParticles);
+            }
+
+            initCanvas();
+            animateParticles();
+            window.addEventListener('resize', initCanvas);
+        });
     </script>
 </body>
 </html>
+```
