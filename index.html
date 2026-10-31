@@ -20,709 +20,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <!-- Custom Institutional Styling -->
-    <style>
-        :root {
-            --iti-navy: #0a1931;
-            --iti-blue: #153e75;
-            --iti-royal: #1d4ed8;
-            --iti-amber: #f59e0b;
-            --iti-amber-dark: #d97706;
-            --iti-light: #f8fafc;
-            --iti-slate: #64748b;
-            --iti-border: #e2e8f0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 85px;
-        }
-
-        body {
-            font-family: 'Poppins', 'Noto Sans Devanagari', sans-serif;
-            color: #1e293b;
-            background-color: #ffffff;
-            overflow-x: hidden;
-        }
-
-        /* Top Institutional Announcement Bar */
-        .top-gov-bar {
-            background: linear-gradient(90deg, #071124 0%, #153e75 100%);
-            color: #f8fafc;
-            font-size: 0.82rem;
-            border-bottom: 2px solid var(--iti-amber);
-        }
-
-        .top-gov-bar a {
-            color: #cbd5e1;
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        .top-gov-bar a:hover {
-            color: var(--iti-amber);
-        }
-
-        .ncvt-pill {
-            background: rgba(245, 158, 11, 0.18);
-            border: 1px solid rgba(245, 158, 11, 0.55);
-            color: #fcd34d;
-            font-weight: 600;
-            padding: 2px 10px;
-            border-radius: 50px;
-            font-size: 0.75rem;
-        }
-
-        /* Sticky Navbar */
-        .navbar {
-            background-color: rgba(255, 255, 255, 0.97) !important;
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--iti-border);
-            transition: all 0.3s ease;
-        }
-
-        .brand-logo-wrap {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-
-        .logo {
-            width: 54px;
-            height: 54px;
-            object-fit: contain;
-            border-radius: 50%;
-            border: 2px solid var(--iti-amber);
-            padding: 2px;
-            background: #fff;
-            box-shadow: 0 2px 8px rgba(10, 25, 49, 0.12);
-        }
-
-        .brand-title-en {
-            font-size: 1.15rem;
-            font-weight: 800;
-            color: var(--iti-navy);
-            letter-spacing: 0.3px;
-            line-height: 1.15;
-            margin: 0;
-        }
-
-        .brand-title-hi {
-            font-size: 0.82rem;
-            font-weight: 600;
-            color: var(--iti-blue);
-            margin: 0;
-        }
-
-        .navbar-nav .nav-link {
-            font-weight: 600;
-            font-size: 0.94rem;
-            color: #334155 !important;
-            padding: 0.5rem 0.85rem !important;
-            border-radius: 8px;
-            transition: all 0.25s ease;
-            position: relative;
-        }
-
-        .navbar-nav .nav-link:hover,
-        .navbar-nav .nav-link.active {
-            color: var(--iti-royal) !important;
-            background-color: rgba(29, 78, 216, 0.06);
-        }
-
-        .btn-nav-cta {
-            background: linear-gradient(135deg, var(--iti-amber) 0%, var(--iti-amber-dark) 100%);
-            color: #0a1931 !important;
-            font-weight: 700;
-            border-radius: 50px;
-            padding: 0.5rem 1.25rem !important;
-            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
-            border: none;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .btn-nav-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(245, 158, 11, 0.45);
-            color: #000 !important;
-        }
-
-        /* Hero Video & Animated Blueprint Header */
-        header.hero-header {
-            position: relative;
-            background-color: var(--iti-navy);
-            min-height: 82vh;
-            width: 100%;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            padding: 4.5rem 0 6rem 0;
-        }
-
-        header.hero-header video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: 1;
-            transform: translateX(-50%) translateY(-50%);
-            object-fit: cover;
-            opacity: 0.35;
-        }
-
-        #heroCanvas {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 2;
-            pointer-events: none;
-        }
-
-        header.hero-header .overlay {
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at center, rgba(21, 62, 117, 0.72) 0%, rgba(10, 25, 49, 0.94) 100%);
-            z-index: 3;
-        }
-
-        header.hero-header .hero-content {
-            position: relative;
-            z-index: 4;
-        }
-
-        .gov-crest-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(245, 158, 11, 0.5);
-            color: #fde68a;
-            padding: 6px 18px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            backdrop-filter: blur(6px);
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-hindi-title {
-            font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
-            font-weight: 800;
-            line-height: 1.3;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
-            letter-spacing: -0.3px;
-        }
-
-        .hero-hindi-lead {
-            font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
-            max-width: 850px;
-            margin: 1.25rem auto 2rem auto;
-            color: #e2e8f0;
-            font-size: 1.12rem;
-            line-height: 1.8;
-            font-weight: 400;
-        }
-
-        .btn-hero-primary {
-            background: linear-gradient(135deg, var(--iti-amber) 0%, var(--iti-amber-dark) 100%);
-            color: #0a1931;
-            font-weight: 700;
-            padding: 0.85rem 2rem;
-            border-radius: 50px;
-            border: none;
-            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.35);
-            transition: all 0.25s ease;
-        }
-
-        .btn-hero-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(245, 158, 11, 0.5);
-            color: #000;
-        }
-
-        .btn-hero-outline {
-            background: rgba(255, 255, 255, 0.08);
-            color: #ffffff;
-            font-weight: 600;
-            padding: 0.85rem 2rem;
-            border-radius: 50px;
-            border: 1px solid rgba(255, 255, 255, 0.35);
-            backdrop-filter: blur(6px);
-            transition: all 0.25s ease;
-        }
-
-        .btn-hero-outline:hover {
-            background: #ffffff;
-            color: var(--iti-navy);
-            transform: translateY(-3px);
-        }
-
-        /* Quick Stats Floating Strip */
-        .stats-strip-wrapper {
-            margin-top: -3.2rem;
-            position: relative;
-            z-index: 10;
-        }
-
-        .stats-card {
-            background: #ffffff;
-            border-radius: 16px;
-            box-shadow: 0 15px 35px rgba(10, 25, 49, 0.09);
-            border: 1px solid rgba(226, 232, 240, 0.9);
-            padding: 1.5rem 1rem;
-        }
-
-        .stat-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 14px;
-            padding: 0.5rem 1rem;
-        }
-
-        .stat-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 12px;
-            background: rgba(29, 78, 216, 0.08);
-            color: var(--iti-royal);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.35rem;
-            flex-shrink: 0;
-        }
-
-        /* Section Headings */
-        .section-badge {
-            display: inline-block;
-            background: rgba(29, 78, 216, 0.09);
-            color: var(--iti-royal);
-            font-weight: 700;
-            font-size: 0.78rem;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            padding: 5px 14px;
-            border-radius: 50px;
-            margin-bottom: 0.65rem;
-        }
-
-        .section-heading {
-            font-weight: 800;
-            color: var(--iti-navy);
-            position: relative;
-            margin-bottom: 0.75rem;
-        }
-
-        /* Features Section (#features) */
-        .fea-box {
-            background: #ffffff;
-            border-radius: 16px !important;
-            border: 1px solid var(--iti-border) !important;
-            padding: 2.25rem 1.75rem !important;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .fea-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--iti-royal), var(--iti-amber));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.35s ease;
-        }
-
-        .fea-box:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 35px rgba(10, 25, 49, 0.08) !important;
-            border-color: rgba(29, 78, 216, 0.25) !important;
-        }
-
-        .fea-box:hover::before {
-            transform: scaleX(1);
-        }
-
-        .fea-icon-circle {
-            width: 68px;
-            height: 68px;
-            border-radius: 18px;
-            background: linear-gradient(135deg, rgba(29, 78, 216, 0.1) 0%, rgba(245, 158, 11, 0.15) 100%);
-            color: var(--iti-royal);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.25rem;
-            transition: all 0.3s ease;
-        }
-
-        .fea-box:hover .fea-icon-circle {
-            background: var(--iti-royal);
-            color: #ffffff;
-            transform: rotate(-5deg) scale(1.05);
-        }
-
-        .fea-box h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--iti-navy);
-            margin-bottom: 0.75rem;
-        }
-
-        /* Courses / Trades Section (#course) */
-        .trades-section-wrapper {
-            background-color: #f8fafc;
-            border-top: 1px solid var(--iti-border);
-            border-bottom: 1px solid var(--iti-border);
-        }
-
-        .filter-btn {
-            border-radius: 50px;
-            padding: 0.5rem 1.25rem;
-            font-weight: 600;
-            font-size: 0.88rem;
-            border: 1px solid #cbd5e1;
-            background: #ffffff;
-            color: #475569;
-            transition: all 0.2s ease;
-        }
-
-        .filter-btn:hover,
-        .filter-btn.active {
-            background: var(--iti-navy);
-            color: #ffffff;
-            border-color: var(--iti-navy);
-            box-shadow: 0 4px 12px rgba(10, 25, 49, 0.18);
-        }
-
-        .courses.card {
-            border-radius: 16px;
-            overflow: hidden;
-            background: #ffffff;
-            border: 1px solid rgba(226, 232, 240, 0.9) !important;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            cursor: pointer;
-        }
-
-        .courses.card:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 18px 32px rgba(10, 25, 49, 0.12) !important;
-            border-color: rgba(29, 78, 216, 0.35) !important;
-        }
-
-        .trade-img-wrap {
-            position: relative;
-            height: 205px;
-            overflow: hidden;
-            background-color: #1e293b;
-        }
-
-        .trade-img-wrap img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .courses.card:hover .trade-img-wrap img {
-            transform: scale(1.07);
-        }
-
-        .trade-badge-duration {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: rgba(10, 25, 49, 0.85);
-            backdrop-filter: blur(4px);
-            color: #fcd34d;
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 4px 12px;
-            border-radius: 50px;
-            border: 1px solid rgba(245, 158, 11, 0.4);
-        }
-
-        .trade-badge-ncvt {
-            position: absolute;
-            bottom: 12px;
-            left: 12px;
-            background: var(--iti-royal);
-            color: #ffffff;
-            font-size: 0.7rem;
-            font-weight: 600;
-            padding: 3px 10px;
-            border-radius: 6px;
-            letter-spacing: 0.4px;
-        }
-
-        .courses .card-body {
-            padding: 1.35rem;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .courses .card-title {
-            font-size: 1.08rem;
-            color: var(--iti-navy);
-            margin-bottom: 0.5rem;
-            line-height: 1.35;
-        }
-
-        .trade-card-footer {
-            margin-top: auto;
-            padding-top: 0.85rem;
-            border-top: 1px dashed #e2e8f0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            font-size: 0.82rem;
-            font-weight: 600;
-            color: var(--iti-royal);
-        }
-
-        /* Registration & Live Clock Section (#registration) */
-        #registration {
-            background: linear-gradient(135deg, #0a1931 0%, #153e75 100%);
-            border-radius: 24px;
-            padding: 3rem 2rem;
-            color: #ffffff;
-            box-shadow: 0 20px 45px rgba(10, 25, 49, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .reminder-card {
-            background: rgba(255, 255, 255, 0.07);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.16);
-            border-radius: 20px;
-            padding: 2rem;
-            height: 100%;
-        }
-
-        .clock-display-box {
-            background: rgba(7, 17, 36, 0.75);
-            border: 1px solid rgba(245, 158, 11, 0.35);
-            border-radius: 16px;
-            padding: 1.5rem;
-            box-shadow: inset 0 2px 12px rgba(0, 0, 0, 0.4);
-        }
-
-        #time {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: clamp(2rem, 4vw, 2.75rem);
-            color: #fcd34d;
-            letter-spacing: 2px;
-            text-shadow: 0 0 18px rgba(245, 158, 11, 0.35);
-        }
-
-        #ampm {
-            font-family: 'JetBrains Mono', monospace;
-            font-weight: 700;
-            color: #38bdf8;
-            font-size: 1.1rem;
-        }
-
-        .activeToggle {
-            background-color: var(--iti-amber) !important;
-            color: #0a1931 !important;
-            border-color: var(--iti-amber) !important;
-            font-weight: 700 !important;
-        }
-
-        .query-form-card {
-            background: #ffffff;
-            color: #1e293b;
-            border-radius: 20px;
-            padding: 2.25rem;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            height: 100%;
-        }
-
-        .query-form-card .form-control,
-        .query-form-card .form-select {
-            border-radius: 10px;
-            padding: 0.7rem 1rem;
-            border: 1px solid #cbd5e1;
-            font-size: 0.92rem;
-        }
-
-        .query-form-card .form-control:focus,
-        .query-form-card .form-select:focus {
-            border-color: var(--iti-royal);
-            box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.15);
-        }
-
-        .yellow.btn {
-            background: linear-gradient(135deg, var(--iti-amber) 0%, var(--iti-amber-dark) 100%);
-            border: none;
-            color: #0a1931;
-            font-weight: 700;
-            padding: 0.8rem 2rem;
-            border-radius: 10px;
-            transition: all 0.25s ease;
-        }
-
-        .yellow.btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4);
-            color: #000;
-        }
-
-        /* Leadership / Principal Section (#experts) */
-        .principal-card {
-            border-radius: 20px;
-            border: 1px solid var(--iti-border);
-            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-            box-shadow: 0 15px 35px rgba(10, 25, 49, 0.07);
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-
-        .principal-avatar-wrap {
-            position: relative;
-            display: inline-block;
-        }
-
-        .principal-avatar {
-            width: 130px;
-            height: 130px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 4px solid var(--iti-amber);
-            padding: 3px;
-            background: #ffffff;
-            box-shadow: 0 8px 20px rgba(10, 25, 49, 0.15);
-        }
-
-        .pro-links a {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(29, 78, 216, 0.08);
-            color: var(--iti-royal);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: all 0.25s ease;
-        }
-
-        .pro-links a:hover {
-            background: var(--iti-royal);
-            color: #ffffff;
-            transform: translateY(-3px);
-        }
-
-        /* Footer Styling */
-        .iti-footer {
-            background-color: #071124;
-            color: #cbd5e1;
-            border-top: 4px solid var(--iti-amber);
-        }
-
-        .iti-footer h5 {
-            color: #ffffff;
-            font-weight: 700;
-            font-size: 1.05rem;
-            margin-bottom: 1.25rem;
-            position: relative;
-            padding-bottom: 0.6rem;
-        }
-
-        .iti-footer h5::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            background-color: var(--iti-amber);
-            border-radius: 2px;
-        }
-
-        .footer-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.6rem;
-        }
-
-        .footer-links a {
-            color: #94a3b8;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: all 0.2s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .footer-links a:hover {
-            color: var(--iti-amber);
-            transform: translateX(4px);
-        }
-
-        /* Back to top button */
-        #backToTop {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            width: 46px;
-            height: 46px;
-            border-radius: 50%;
-            background: var(--iti-amber);
-            color: var(--iti-navy);
-            border: none;
-            box-shadow: 0 6px 18px rgba(10, 25, 49, 0.25);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            z-index: 999;
-            cursor: pointer;
-            transition: all 0.25s ease;
-        }
-
-        #backToTop:hover {
-            background: var(--iti-navy);
-            color: #ffffff;
-            transform: translateY(-3px);
-        }
-
-        @media (max-width: 767.98px) {
-            header.hero-header {
-                min-height: 75vh;
-                padding: 3rem 0 4.5rem 0;
-            }
-            .hero-hindi-title {
-                font-size: 1.95rem;
-            }
-            .hero-hindi-lead {
-                font-size: 0.98rem;
-            }
-            #registration {
-                padding: 1.75rem 1.15rem;
-                border-radius: 16px;
-            }
-            .reminder-card,
-            .query-form-card {
-                padding: 1.5rem;
-            }
-        }
-    </style>
+     <link rel="stylesheet" href="index.css"/>
 </head>
 <body>
 
@@ -734,7 +32,7 @@
                 <span><strong>श्रम संसाधन विभाग, बिहार सरकार</strong> <span class="d-none d-md-inline">| Dept. of Labour Resources, Govt. of Bihar</span></span>
             </div>
             <div class="d-flex align-items-center gap-3">
-                <span class="ncvt-pill"><i class="fa-solid fa-certificate me-1"></i>NCVT / SCVT Recognized</span>
+                <span class="ncvt-pill"><i class="fa-solid fa-certificate me-1"></i>NCVT Recognized</span>
                 <span class="d-none d-sm-inline text-light small"><i class="fa-solid fa-location-dot text-warning me-1"></i>Katihar, Bihar - 854105</span>
             </div>
         </div>
@@ -762,13 +60,16 @@
             <div class="collapse navbar-collapse justify-content-end navigation" id="navbarNav">
                 <ul class="navbar-nav align-items-lg-center gap-lg-1 mt-3 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#home">Home</a>
+                        <a class="nav-link active" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#features">About &amp; Features</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#course">Trades (12)</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="Faculty/faculty.html">Instructors</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#registration">Query Desk</a>
@@ -854,7 +155,7 @@
                             <i class="fa-solid fa-building-columns"></i>
                         </div>
                         <div>
-                            <h4 class="fw-bold mb-0 text-dark">NCVT / SCVT</h4>
+                            <h4 class="fw-bold mb-0 text-dark">NCVT</h4>
                             <small class="text-muted">Govt. Certified</small>
                         </div>
                     </div>
@@ -938,7 +239,7 @@
     <section id="course" class="trades-section-wrapper py-5">
         <div class="container py-3">
             <div class="text-center mb-4">
-                <span class="section-badge">NCVT &amp; SCVT Approved Curriculum</span>
+                <span class="section-badge">NCVT Approved Curriculum</span>
                 <h1 class="section-heading display-6">Our Popular Trades</h1>
                 <p class="text-muted mx-auto" style="max-width: 700px;">
                     The Government Industrial Training Institute Katihar offers several top NCVT- and SCVT-recognized technical and vocational trades. Click any trade card for full career &amp; syllabus details.
@@ -970,9 +271,9 @@
                     <div class="courses card h-100 shadow-sm" onclick="openTradeModal('Electrician')">
                         <div class="trade-img-wrap">
                             <img src="img/c1.jpg" alt="Electrician Trade"
-                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80';">
+                                 onerror="this.onerror=null;">
                             <span class="trade-badge-duration"><i class="fa-regular fa-clock me-1"></i>2 Years</span>
-                            <span class="trade-badge-ncvt">NCVT / SCVT</span>
+                            <span class="trade-badge-ncvt">NCVT</span>
                         </div>
                         <div class="card-body details">
                             <h6 class="card-title fw-bold">Electrician</h6>
@@ -992,9 +293,9 @@
                     <div class="courses card h-100 shadow-sm" onclick="openTradeModal('Fitter')">
                         <div class="trade-img-wrap">
                             <img src="img/c2.jpg" alt="Fitter Trade"
-                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80';">
+                                 onerror="this.onerror=null;">
                             <span class="trade-badge-duration"><i class="fa-regular fa-clock me-1"></i>2 Years</span>
-                            <span class="trade-badge-ncvt">NCVT / SCVT</span>
+                            <span class="trade-badge-ncvt">NCVT</span>
                         </div>
                         <div class="card-body details">
                             <h6 class="card-title fw-bold">Fitter</h6>
@@ -1014,9 +315,9 @@
                     <div class="courses card h-100 shadow-sm" onclick="openTradeModal('Electronic Mechanic')">
                         <div class="trade-img-wrap">
                             <img src="img/c3.avif" alt="Electronic Mechanic Trade"
-                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80';">
+                                 onerror="this.onerror=null;">
                             <span class="trade-badge-duration"><i class="fa-regular fa-clock me-1"></i>2 Years</span>
-                            <span class="trade-badge-ncvt">NCVT / SCVT</span>
+                            <span class="trade-badge-ncvt">NCVT</span>
                         </div>
                         <div class="card-body details">
                             <h6 class="card-title fw-bold">Electronic Mech.</h6>
@@ -1036,9 +337,9 @@
                     <div class="courses card h-100 shadow-sm" onclick="openTradeModal('ICTSM')">
                         <div class="trade-img-wrap">
                             <img src="img/c4.jpeg" alt="ICTSM Trade"
-                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1597852074816-d933c7d2b988?auto=format&fit=crop&w=800&q=80';">
+                                 onerror="this.onerror=null;">
                             <span class="trade-badge-duration"><i class="fa-regular fa-clock me-1"></i>2 Years</span>
-                            <span class="trade-badge-ncvt">NCVT / SCVT</span>
+                            <span class="trade-badge-ncvt">NCVT</span>
                         </div>
                         <div class="card-body details">
                             <h6 class="card-title fw-bold">Information Technology and Electronics System Maintenance</h6>
@@ -1058,9 +359,9 @@
                     <div class="courses card h-100 shadow-sm" onclick="openTradeModal('Machinist')">
                         <div class="trade-img-wrap">
                             <img src="img/c5.webp" alt="Machinist Trade"
-                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80';">
+                                 onerror="this.onerror=null;">
                             <span class="trade-badge-duration"><i class="fa-regular fa-clock me-1"></i>2 Years</span>
-                            <span class="trade-badge-ncvt">NCVT / SCVT</span>
+                            <span class="trade-badge-ncvt">NCVT</span>
                         </div>
                         <div class="card-body details">
                             <h6 class="card-title fw-bold">Machinist</h6>
@@ -1080,9 +381,9 @@
                     <div class="courses card h-100 shadow-sm" onclick="openTradeModal('Turner')">
                         <div class="trade-img-wrap">
                             <img src="img/c6.jpg" alt="Turner Trade"
-                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1565439390118-092708f605f4?auto=format&fit=crop&w=800&q=80';">
+                                 onerror="this.onerror=null; ">
                             <span class="trade-badge-duration"><i class="fa-regular fa-clock me-1"></i>2 Years</span>
-                            <span class="trade-badge-ncvt">NCVT / SCVT</span>
+                            <span class="trade-badge-ncvt">NCVT</span>
                         </div>
                         <div class="card-body details">
                             <h6 class="card-title fw-bold">Turner</h6>
@@ -1102,9 +403,9 @@
                     <div class="courses card h-100 shadow-sm" onclick="openTradeModal('Wireman')">
                         <div class="trade-img-wrap">
                             <img src="img/c7.jpeg" alt="Wireman Trade"
-                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=800&q=80';">
+                                 onerror="this.onerror=null;">
                             <span class="trade-badge-duration"><i class="fa-regular fa-clock me-1"></i>2 Years</span>
-                            <span class="trade-badge-ncvt">NCVT / SCVT</span>
+                            <span class="trade-badge-ncvt">NCVT</span>
                         </div>
                         <div class="card-body details">
                             <h6 class="card-title fw-bold">Wireman</h6>
@@ -1124,9 +425,9 @@
                     <div class="courses card h-100 shadow-sm" onclick="openTradeModal('Mechanic Motor Vehicle')">
                         <div class="trade-img-wrap">
                             <img src="img/c8.jpg" alt="Mechanic Motor Vehicle Trade"
-                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=800&q=80';">
+                                 onerror="this.onerror=null;">
                             <span class="trade-badge-duration"><i class="fa-regular fa-clock me-1"></i>2 Years</span>
-                            <span class="trade-badge-ncvt">NCVT / SCVT</span>
+                            <span class="trade-badge-ncvt">NCVT</span>
                         </div>
                         <div class="card-body details">
                             <h6 class="card-title fw-bold">Mechanic Motor Vehicle</h6>
@@ -1146,9 +447,9 @@
                     <div class="courses card h-100 shadow-sm" onclick="openTradeModal('Welder')">
                         <div class="trade-img-wrap">
                             <img src="img/c9.webp" alt="Welder Trade"
-                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=800&q=80';">
+                                 onerror="this.onerror=null; ">
                             <span class="trade-badge-duration"><i class="fa-regular fa-clock me-1"></i>1 Year</span>
-                            <span class="trade-badge-ncvt">NCVT / SCVT</span>
+                            <span class="trade-badge-ncvt">NCVT</span>
                         </div>
                         <div class="card-body details">
                             <h6 class="card-title fw-bold">Welder</h6>
@@ -1168,9 +469,9 @@
                     <div class="courses card h-100 shadow-sm" onclick="openTradeModal('Mechanic Diesel')">
                         <div class="trade-img-wrap">
                             <img src="img/c10.jpeg" alt="Mechanic Diesel Trade"
-                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=800&q=80';">
+                                 onerror="this.onerror=null;">
                             <span class="trade-badge-duration"><i class="fa-regular fa-clock me-1"></i>1 Year</span>
-                            <span class="trade-badge-ncvt">NCVT / SCVT</span>
+                            <span class="trade-badge-ncvt">NCVT</span>
                         </div>
                         <div class="card-body details">
                             <h6 class="card-title fw-bold">Mechanic Diesel</h6>
@@ -1190,9 +491,9 @@
                     <div class="courses card h-100 shadow-sm" onclick="openTradeModal('FoundryMan')">
                         <div class="trade-img-wrap">
                             <img src="img/c11.jpg" alt="FoundryMan Trade"
-                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1535813547-99c456a41d4a?auto=format&fit=crop&w=800&q=80';">
+                                 onerror="this.onerror=null;">
                             <span class="trade-badge-duration"><i class="fa-regular fa-clock me-1"></i>1 Year</span>
-                            <span class="trade-badge-ncvt">NCVT / SCVT</span>
+                            <span class="trade-badge-ncvt">NCVT</span>
                         </div>
                         <div class="card-body details">
                             <h6 class="card-title fw-bold">FoundryMan</h6>
@@ -1214,7 +515,7 @@
                             <img src="img/c12.jpeg" alt="Plumber Trade"
                                  onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=800&q=80';">
                             <span class="trade-badge-duration"><i class="fa-regular fa-clock me-1"></i>1 Year</span>
-                            <span class="trade-badge-ncvt">NCVT / SCVT</span>
+                            <span class="trade-badge-ncvt">NCVT</span>
                         </div>
                         <div class="card-body details">
                             <h6 class="card-title fw-bold">Plumber</h6>
@@ -1371,8 +672,8 @@
                     <div class="row align-items-center g-4">
                         <div class="col-md-4 text-center">
                             <div class="principal-avatar-wrap mb-2">
-                                <img src="img/ITI.png" class="principal-avatar" alt="Rakesh Kumar - Principal ITI Katihar"
-                                     onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 120 120%22><rect width=%22120%22 height=%22120%22 fill=%22%230a1931%22/><circle cx=%2260%22 cy=%2245%22 r=%2222%22 fill=%22%23f59e0b%22/><path d=%22M22 108 C22 78 98 78 98 108%22 fill=%22%23f59e0b%22/></svg>';">
+                                <img src="Faculty/images/Principle_sir.jpeg" class="principal-avatar" alt="Rakesh Kumar - Principal ITI Katihar"
+                                     onerror="this.onerror=null;">
                             </div>
                             <h5 class="fw-bold mb-0 text-dark mt-2">Rakesh Kumar</h5>
                             <p class="text-primary fw-semibold small mb-2">Principal, Govt. ITI Katihar</p>
@@ -1419,7 +720,7 @@
                         <div class="row g-2 small">
                             <div class="col-6">
                                 <span class="text-muted d-block">Affiliation:</span>
-                                <strong class="text-dark">NCVT / SCVT Govt. Approved</strong>
+                                <strong class="text-dark">NCVT Govt. Approved</strong>
                             </div>
                             <div class="col-6">
                                 <span class="text-muted d-block">Min. Eligibility:</span>
@@ -1441,92 +742,9 @@
             </div>
         </div>
     </div>
-
-    <!-- Complete Institutional Footer (#content-footer) -->
-    <div id="content-footer">
-        <footer class="iti-footer pt-5 pb-4">
-            <div class="container">
-                <div class="row g-4 mb-4">
-                    <!-- Col 1: About Institute -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="d-flex align-items-center gap-2 mb-3">
-                            <i class="fa-solid fa-gears fa-2x text-warning"></i>
-                            <div>
-                                <h6 class="text-white fw-bold mb-0">GOVT. ITI KATIHAR</h6>
-                                <small class="text-warning">राजकीय औद्योगिक प्रशिक्षण संस्थान, कटिहार</small>
-                            </div>
-                        </div>
-                        <p class="small text-secondary mb-3" style="line-height: 1.7;">
-                            Operated under the Department of Labour Resources, Government of Bihar (श्रम संसाधन विभाग, बिहार सरकार). Dedicated to imparting high-quality vocational and industrial training to empower youth with sustainable livelihoods.
-                        </p>
-                        <div class="d-flex gap-2">
-                            <span class="badge bg-dark border border-secondary text-light">DGT India</span>
-                            <span class="badge bg-dark border border-secondary text-light">NCVT MIS</span>
-                            <span class="badge bg-dark border border-secondary text-light">BCECEB</span>
-                        </div>
-                    </div>
-
-                    <!-- Col 2: Quick Navigation -->
-                    <div class="col-lg-2 col-md-6">
-                        <h5>Quick Links</h5>
-                        <ul class="footer-links">
-                            <li><a href="#home"><i class="fa-solid fa-angle-right text-warning"></i> Home</a></li>
-                            <li><a href="#features"><i class="fa-solid fa-angle-right text-warning"></i> Institute Features</a></li>
-                            <li><a href="#course"><i class="fa-solid fa-angle-right text-warning"></i> All 12 Trades</a></li>
-                            <li><a href="#registration"><i class="fa-solid fa-angle-right text-warning"></i> Online Query Desk</a></li>
-                            <li><a href="#experts"><i class="fa-solid fa-angle-right text-warning"></i> Principal's Desk</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Col 3: Popular Trades -->
-                    <div class="col-lg-3 col-md-6">
-                        <h5>Key Technical Trades</h5>
-                        <ul class="footer-links">
-                            <li><a href="#course" onclick="openTradeModal('Electrician')"><i class="fa-solid fa-bolt text-warning"></i> Electrician &amp; Wireman</a></li>
-                            <li><a href="#course" onclick="openTradeModal('Fitter')"><i class="fa-solid fa-wrench text-warning"></i> Fitter &amp; Turner</a></li>
-                            <li><a href="#course" onclick="openTradeModal('ICTSM')"><i class="fa-solid fa-computer text-warning"></i> ICTSM &amp; Electronic Mech.</a></li>
-                            <li><a href="#course" onclick="openTradeModal('Mechanic Motor Vehicle')"><i class="fa-solid fa-car-side text-warning"></i> MMV &amp; Mechanic Diesel</a></li>
-                            <li><a href="#course" onclick="openTradeModal('Welder')"><i class="fa-solid fa-fire-flame-curved text-warning"></i> Welder, Plumber &amp; Foundry</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Col 4: Contact Information -->
-                    <div class="col-lg-3 col-md-6">
-                        <h5>Contact Us</h5>
-                        <ul class="list-unstyled small text-secondary mb-0">
-                            <li class="d-flex align-items-start gap-2 mb-2">
-                                <i class="fa-solid fa-location-dot text-warning mt-1"></i>
-                                <span>Govt. Industrial Training Institute (ITI), Katihar, Bihar – 854105, India</span>
-                            </li>
-                            <li class="d-flex align-items-center gap-2 mb-2">
-                                <i class="fa-solid fa-building-flag text-warning"></i>
-                                <span>Dept. of Labour Resources, Govt. of Bihar</span>
-                            </li>
-                            <li class="d-flex align-items-center gap-2 mb-2">
-                                <i class="fa-solid fa-clock text-warning"></i>
-                                <span>Mon – Sat: 10:00 AM to 05:00 PM</span>
-                            </li>
-                            <li class="d-flex align-items-center gap-2">
-                                <i class="fa-solid fa-envelope text-warning"></i>
-                                <span>itikatihar-bih@nic.in / Query Desk</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <hr class="border-secondary opacity-25">
-
-                <div class="d-flex flex-column flex-md-row justify-content-between align-items-center small text-secondary pt-2">
-                    <div>
-                        &copy; <span id="currentYear">2026</span> <strong>GOVT. ITI KATIHAR (राजकीय औद्योगिक प्रशिक्षण संस्थान - कटिहार)</strong>. All Rights Reserved.
-                    </div>
-                    <div class="mt-2 mt-md-0">
-                        Designed for Skill Development &amp; Technical Education, Bihar
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </div>
+    <!-- 1. Create a footer content -->
+    <div id="footer-content"></div>
+   
 
     <!-- Floating Back-to-Top Button -->
     <button id="backToTop" title="Back to Top" aria-label="Back to Top">
@@ -1538,7 +756,7 @@
 
     <!-- Application Scripts -->
     <script>
-        // 1. Preserve original mobile menu class toggle & auto-close Bootstrap collapse on nav-link click
+              // 1. Preserve original mobile menu class toggle & auto-close Bootstrap collapse on nav-link click
         $('#menu-btn').click(function() {
             $('nav .navigation ul').addClass('active');
         });
@@ -1678,111 +896,7 @@
 
         searchInput.addEventListener('input', filterTrades);
 
-        // 5. Trade Details Modal Data & Handler
-        const tradeDetailsData = {
-            'Electrician': {
-                title: 'Electrician (इलेक्ट्रीशियन)',
-                duration: '2 Years (4 Semesters / Annual Pattern)',
-                eligibility: '10th Pass (with Science & Mathematics)',
-                desc: 'Comprehensive engineering trade covering domestic & industrial wiring, AC/DC motors, transformers, switchgear, power generation, and electrical safety standards.',
-                scope: 'High recruitment in Indian Railways (ALP/Technician), Bihar State Power Holding Company (BSPHCL), NTPC, BHEL, DRDO, and licensed electrical contracting.'
-            },
-            'Fitter': {
-                title: 'Fitter (फिटर)',
-                duration: '2 Years',
-                eligibility: '10th Pass (with Science & Mathematics)',
-                desc: 'Core mechanical engineering trade focusing on fitting, assembling, structural fabrication, bench work, precision measurement instruments (Vernier, Micrometer), and machine maintenance.',
-                scope: 'Extensive opportunities in Indian Railways, Ordnance Factories, IOCL, ONGC, heavy manufacturing plants, and shipyard industries.'
-            },
-            'Electronic Mechanic': {
-                title: 'Electronic Mechanic (इलेक्ट्रॉनिक मैकेनिक)',
-                duration: '2 Years',
-                eligibility: '10th Pass',
-                desc: 'Focuses on assembling, testing, and repairing electronic equipment, microcontrollers, LED/LCD systems, solar inverters, communication devices, and industrial automation.',
-                scope: 'Careers in ISRO, DRDO, BEL, DMRC/Metro Rail, consumer electronics manufacturing, and instrumentation servicing.'
-            },
-            'ICTSM': {
-                title: 'Information Technology & Electronics System Maintenance (ICTSM)',
-                duration: '2 Years',
-                eligibility: '10th Pass',
-                desc: 'Modern IT & hardware trade training students in PC assembly, OS installation, LAN/WAN networking, server administration, printer/UPS repair, and cybersecurity basics.',
-                scope: 'IT Support Engineer, Network Technician, Hardware Specialist in government departments, banks, corporate offices, and IT service firms.'
-            },
-            'Machinist': {
-                title: 'Machinist (मशीनिस्ट)',
-                duration: '2 Years',
-                eligibility: '10th Pass',
-                desc: 'Hands-on mastery of heavy machine tools including Milling, Shaping, Planing, Slotting, Precision Grinding, and CNC (Computer Numerical Control) programming.',
-                scope: 'High demand in automobile OEM plants (Tata Motors, Maruti, Mahindra), tool rooms, defense production, and aerospace component manufacturing.'
-            },
-            'Turner': {
-                title: 'Turner (टर्नर)',
-                duration: '2 Years',
-                eligibility: '10th Pass',
-                desc: 'Specialized metal-turning trade using conventional and CNC Lathe machines to manufacture shafts, gears, bolts, tapers, and precision engineering parts from engineering drawings.',
-                scope: 'Strong absorption in Railway Workshops, HAL, BHEL, heavy engineering workshops, and precision machine shops.'
-            },
-            'Wireman': {
-                title: 'Wireman (वायरमैन)',
-                duration: '2 Years',
-                eligibility: '8th / 10th Pass',
-                desc: 'Practical training in residential, commercial, and multi-storey electrical conduit wiring, distribution boards, underground cabling, and earthing installations.',
-                scope: 'Public Works Department (PWD), state electricity boards, real estate infrastructure projects, and independent electrical contracting.'
-            },
-            'Mechanic Motor Vehicle': {
-                title: 'Mechanic Motor Vehicle - MMV (मैकेनिक मोटर व्हीकल)',
-                duration: '2 Years',
-                eligibility: '10th Pass',
-                desc: 'Complete automobile engineering program covering petrol/diesel engines, gearbox, braking, steering, suspension, emission control, and OBD scanner diagnostics.',
-                scope: 'State Road Transport Corporations, major automobile service centers, fleet management companies, and own multi-brand garage setup.'
-            },
-            'Welder': {
-                title: 'Welder (वेल्डर)',
-                duration: '1 Year',
-                eligibility: '8th / 10th Pass',
-                desc: 'Intensive 1-year trade teaching Shielded Metal Arc Welding (SMAW), Gas Welding, MIG/MAG, TIG welding, plasma cutting, and structural weld inspection.',
-                scope: 'Immediate employment in railway coach factories, bridge construction, oil & gas pipelines, shipyards, and overseas fabrication projects.'
-            },
-            'Mechanic Diesel': {
-                title: 'Mechanic Diesel (मैकेनिक डीजल)',
-                duration: '1 Year',
-                eligibility: '10th Pass',
-                desc: 'Focused 1-year engineering trade covering heavy diesel engines, CRDI fuel systems, turbochargers, stationary DG sets, tractors, and marine/locomotive diesel units.',
-                scope: 'Indian Railways (Diesel Sheds), mining & earthmoving companies, logistics fleets, and power backup service companies.'
-            },
-            'FoundryMan': {
-                title: 'FoundryMan (फाउंड्रीमैन)',
-                duration: '1 Year',
-                eligibility: '10th Pass',
-                desc: 'Metallurgical and casting trade imparting skills in sand preparation, mould & core making, cupola/induction furnace melting, and metal pouring & finishing.',
-                scope: 'Steel plants (SAIL, Tata Steel), automotive engine block foundries, heavy engineering corporations, and metal casting units.'
-            },
-            'Plumber': {
-                title: 'Plumber (प्लंबर)',
-                duration: '1 Year',
-                eligibility: '8th / 10th Pass',
-                desc: 'Practical 1-year trade covering GI/PVC/CPVC/PPR pipe fitting, water treatment & supply lines, solar water heaters, drainage systems, and modern sanitaryware installation.',
-                scope: 'PHED (Public Health Engineering Dept), Smart City infrastructure projects, hospitality sector maintenance, and lucrative self-employment.'
-            }
-        };
-
-        let currentModalTrade = 'General Admission Query';
-
-        window.openTradeModal = function(tradeKey) {
-            const info = tradeDetailsData[tradeKey] || tradeDetailsData['Electrician'];
-            currentModalTrade = info.title;
-
-            document.getElementById('tradeModalTitle').textContent = info.title;
-            document.getElementById('tradeModalDuration').textContent = info.duration;
-            document.getElementById('tradeModalEligibility').textContent = info.eligibility;
-            document.getElementById('tradeModalDesc').textContent = info.desc;
-            document.getElementById('tradeModalScope').textContent = info.scope;
-
-            const modalEl = document.getElementById('tradeDetailModal');
-            const modalInstance = bootstrap.Modal.getOrCreateInstance(modalEl);
-            modalInstance.show();
-        };
-
+       
         document.getElementById('modalInquireBtn').addEventListener('click', () => {
             const modalEl = document.getElementById('tradeDetailModal');
             const modalInstance = bootstrap.Modal.getInstance(modalEl);
@@ -1893,6 +1007,122 @@
             animateParticles();
             window.addEventListener('resize', initCanvas);
         });
+    </script>
+    <!-- Script For Footer HTML Page Fetch-->
+    <script>
+        fetch('footer/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-content').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading content:', error));
+    </script>
+    <script>
+         // 5. Trade Details Modal Data & Handler
+        const tradeDetailsData = {
+            'Electrician': {
+                title: 'Electrician (इलेक्ट्रीशियन)',
+                duration: '2 Years (4 Semesters / Annual Pattern)',
+                eligibility: '10th Pass (with Science & Mathematics)',
+                desc: 'Comprehensive engineering trade covering domestic & industrial wiring, AC/DC motors, transformers, switchgear, power generation, and electrical safety standards.',
+                scope: 'High recruitment in Indian Railways (ALP/Technician), Bihar State Power Holding Company (BSPHCL), NTPC, BHEL, DRDO, and licensed electrical contracting.'
+            },
+            'Fitter': {
+                title: 'Fitter (फिटर)',
+                duration: '2 Years',
+                eligibility: '10th Pass (with Science & Mathematics)',
+                desc: 'Core mechanical engineering trade focusing on fitting, assembling, structural fabrication, bench work, precision measurement instruments (Vernier, Micrometer), and machine maintenance.',
+                scope: 'Extensive opportunities in Indian Railways, Ordnance Factories, IOCL, ONGC, heavy manufacturing plants, and shipyard industries.'
+            },
+            'Electronic Mechanic': {
+                title: 'Electronic Mechanic (इलेक्ट्रॉनिक मैकेनिक)',
+                duration: '2 Years',
+                eligibility: '10th Pass',
+                desc: 'Focuses on assembling, testing, and repairing electronic equipment, microcontrollers, LED/LCD systems, solar inverters, communication devices, and industrial automation.',
+                scope: 'Careers in ISRO, DRDO, BEL, DMRC/Metro Rail, consumer electronics manufacturing, and instrumentation servicing.'
+            },
+            'ICTSM': {
+                title: 'Information Technology & Electronics System Maintenance (ICTSM)',
+                duration: '2 Years',
+                eligibility: '10th Pass',
+                desc: 'Modern IT & hardware trade training students in PC assembly, OS installation, LAN/WAN networking, server administration, printer/UPS repair, and cybersecurity basics.',
+                scope: 'IT Support Engineer, Network Technician, Hardware Specialist in government departments, banks, corporate offices, and IT service firms.'
+            },
+            'Machinist': {
+                title: 'Machinist (मशीनिस्ट)',
+                duration: '2 Years',
+                eligibility: '10th Pass',
+                desc: 'Hands-on mastery of heavy machine tools including Milling, Shaping, Planing, Slotting, Precision Grinding, and CNC (Computer Numerical Control) programming.',
+                scope: 'High demand in automobile OEM plants (Tata Motors, Maruti, Mahindra), tool rooms, defense production, and aerospace component manufacturing.'
+            },
+            'Turner': {
+                title: 'Turner (टर्नर)',
+                duration: '2 Years',
+                eligibility: '10th Pass',
+                desc: 'Specialized metal-turning trade using conventional and CNC Lathe machines to manufacture shafts, gears, bolts, tapers, and precision engineering parts from engineering drawings.',
+                scope: 'Strong absorption in Railway Workshops, HAL, BHEL, heavy engineering workshops, and precision machine shops.'
+            },
+            'Wireman': {
+                title: 'Wireman (वायरमैन)',
+                duration: '2 Years',
+                eligibility: '10th Pass',
+                desc: 'Practical training in residential, commercial, and multi-storey electrical conduit wiring, distribution boards, underground cabling, and earthing installations.',
+                scope: 'Public Works Department (PWD), state electricity boards, real estate infrastructure projects, and independent electrical contracting.'
+            },
+            'Mechanic Motor Vehicle': {
+                title: 'Mechanic Motor Vehicle - MMV (मैकेनिक मोटर व्हीकल)',
+                duration: '2 Years',
+                eligibility: '10th Pass',
+                desc: 'Complete automobile engineering program covering petrol/diesel engines, gearbox, braking, steering, suspension, emission control, and OBD scanner diagnostics.',
+                scope: 'State Road Transport Corporations, major automobile service centers, fleet management companies, and own multi-brand garage setup.'
+            },
+            'Welder': {
+                title: 'Welder (वेल्डर)',
+                duration: '1 Year',
+                eligibility: '10th Pass',
+                desc: 'Intensive 1-year trade teaching Shielded Metal Arc Welding (SMAW), Gas Welding, MIG/MAG, TIG welding, plasma cutting, and structural weld inspection.',
+                scope: 'Immediate employment in railway coach factories, bridge construction, oil & gas pipelines, shipyards, and overseas fabrication projects.'
+            },
+            'Mechanic Diesel': {
+                title: 'Mechanic Diesel (मैकेनिक डीजल)',
+                duration: '1 Year',
+                eligibility: '10th Pass',
+                desc: 'Focused 1-year engineering trade covering heavy diesel engines, CRDI fuel systems, turbochargers, stationary DG sets, tractors, and marine/locomotive diesel units.',
+                scope: 'Indian Railways (Diesel Sheds), mining & earthmoving companies, logistics fleets, and power backup service companies.'
+            },
+            'FoundryMan': {
+                title: 'FoundryMan (फाउंड्रीमैन)',
+                duration: '1 Year',
+                eligibility: '10th Pass',
+                desc: 'Metallurgical and casting trade imparting skills in sand preparation, mould & core making, cupola/induction furnace melting, and metal pouring & finishing.',
+                scope: 'Steel plants (SAIL, Tata Steel), automotive engine block foundries, heavy engineering corporations, and metal casting units.'
+            },
+            'Plumber': {
+                title: 'Plumber (प्लंबर)',
+                duration: '1 Year',
+                eligibility: '10th Pass',
+                desc: 'Practical 1-year trade covering GI/PVC/CPVC/PPR pipe fitting, water treatment & supply lines, solar water heaters, drainage systems, and modern sanitaryware installation.',
+                scope: 'PHED (Public Health Engineering Dept), Smart City infrastructure projects, hospitality sector maintenance, and lucrative self-employment.'
+            }
+        };
+
+        let currentModalTrade = 'General Admission Query';
+
+        window.openTradeModal = function(tradeKey) {
+            const info = tradeDetailsData[tradeKey] || tradeDetailsData['Electrician'];
+            currentModalTrade = info.title;
+
+            document.getElementById('tradeModalTitle').textContent = info.title;
+            document.getElementById('tradeModalDuration').textContent = info.duration;
+            document.getElementById('tradeModalEligibility').textContent = info.eligibility;
+            document.getElementById('tradeModalDesc').textContent = info.desc;
+            document.getElementById('tradeModalScope').textContent = info.scope;
+
+            const modalEl = document.getElementById('tradeDetailModal');
+            const modalInstance = bootstrap.Modal.getOrCreateInstance(modalEl);
+            modalInstance.show();
+        };
+
     </script>
 </body>
 </html>
